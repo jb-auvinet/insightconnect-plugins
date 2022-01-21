@@ -15,6 +15,6 @@ class DlDelete(insightconnect_plugin_runtime.Action):
         )
 
     def run(self, params={}):
-        destination_list_id = params.get(Input.DESTINATIONLISTID)
+        dl_id = params.get(Input.DESTINATIONLISTID)
 
-        return {Output.SUCCESS: self.connection.client.delete_destination_list(destination_list_id=destination_list_id)}
+        return {Output.SUCCESS: self.connection.client.delete_destination_list(destination_list_id=dl_id)}

@@ -1,20 +1,19 @@
 # Description
 
-Cisco Umbrella Destinations allows users to manage, block, and allow network destinations based on policies within their organization.
+This plugin utilizes the Cisco Umbrella Destination Lists API to provide a consistent way to programmatically manage access to network destinations, and you can block or allow a destination based on the policies applied to the identities within your organization
 
 # Key Features
 
-* Create destination lists
-* Modify existing destination lists
+Identify key features of plugin.
 
 # Requirements
 
-* API Key and Secret Key from Cisco Umbrella 
-* Cisco Umbrella organization ID
+* Example: Requires an API Key from the product
+* Example: API must be enabled on the Settings page in the product's user interface
 
 # Supported Product Versions
 
-* 2022-01-31
+_There are no supported product versions listed._
 
 # Documentation
 
@@ -42,26 +41,38 @@ Example input:
 
 ### Actions
 
-#### Add Destinations to Destination List
+#### Destinations List GET (All)
 
-This action is used to add a list of destinations to a destination list.
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+_This action does not contain any inputs._
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
 
 ##### Input
 
 |Name|Type|Default|Required|Description|Enum|Example|
 |----|----|-------|--------|-----------|----|-------|
-|comment|string|None|False|Information about domain|None|I trust this domain|
-|destination|string|None|True|Title for the destination list|None|www.example.com|
-|destinationListId|integer|None|True|Unique ID for destination list|None|12345678|
+|organizationId|integer|None|True|Organization ID|None|1234567|
 
 Example input:
 
 ```
-{
-  "comment": "I trust this domain",
-  "destination": "www.example.com",
-  "destinationListId": 12345678
-}
 ```
 
 ##### Output
@@ -73,11 +84,2434 @@ Example input:
 Example output:
 
 ```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True|Successful returned value|
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|1234567|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organization.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organization ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to retrieve all destination lists of organisation.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|organizationId|integer|None|True|Organisation ID|None|None|
+
+Example input:
+
+```
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|[]dlCollection|True||
+
+Example output:
+
+```
+```
+
+#### Destinations List GET (All)
+
+This action is used to add list of destinations to destination list.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|destinationListId|integer|None|True|Unique ID for destination list|None|12345678|
+|payload|[]destinationsList|None|True|List of destinations|None|Destination URL or IP followed by a comment|
+
+Example input:
+
+```
+{
+  "destinationListId": 12345678,
+  "payload": "Destination URL or IP followed by a comment"
+}
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|success|dResponse|True|Successful returned value|
+
+Example output:
+
+```
 {
   "access": "allow",
   "bundleTypeId": 1,
   "createdAt": "2021-12-06T16:03:49+0000",
-  "id": 12345678,
+  "id": 15609742,
   "isGlobal": false,
   "isMspDefault": false,
   "markedForDeletion": false,
@@ -86,73 +2520,97 @@ Example output:
   },
   "modifiedAt": "2022-01-14T15:09:21+0000",
   "name": "ABCList",
-  "organizationId": 1234567,
+  "organizationId": 2372338,
   "thirdpartyCategoryId": null
 }
 ```
 
-#### Delete Destinations
+#### Destination DELETE
 
-This action is used to delete a list of destinations from a destination list.
+This action is used to delete list of destinations from destination list.
 
 ##### Input
 
 |Name|Type|Default|Required|Description|Enum|Example|
 |----|----|-------|--------|-----------|----|-------|
 |destinationListId|integer|None|True|Unique ID for destination list|None|12345678|
-|payload|string|None|True|List of destination IDs separated by a space|None|1241 67|
+|payload|[]integer|None|True|List of destinations|None|1241, 67|
+
+##### Output
 
 Example input:
 
 ```
 {
   "destinationListId": 12345678,
-  "payload": "1241 67"
+  "payload": "1241, 67"
 }
 ```
 
 ##### Output
 
-|Name|Type|Required|Description|
-|----|----|--------|-----------|
-|success|dlCollection|True|Updated destination list|
+Example input:
+
+```
+{
+  "destinationListId": 12345678,
+  "payload": "1241, 67"
+}
+```
+
+##### Output
+
+Example input:
+
+```
+{
+  "destinationListId": 12345678,
+  "payload": "1241, 67"
+}
+```
+
+##### Output
 
 Example output:
 
 ```
 {
-    "id": 12345678,
-    "organizationId": 1234567,
     "access": "allow",
-    "isGlobal": false,
-    "name": "AAAA",
-    "thirdpartyCategoryId": null,
+    "bundleTypeId": 1,
     "createdAt": "2021-12-06T16:03:49+0000",
-    "modifiedAt": "2022-01-27T16:48:52+0000",
+    "id": 15609742,
+    "isGlobal": false,
     "isMspDefault": false,
     "markedForDeletion": false,
-    "bundleTypeId": 1,
     "meta": {
-        "destinationCount": 2
-    }
+      "destinationCount": 4
+    },
+    "modifiedAt": "2022-01-14T15:09:24+0000",
+    "name": "ABCList",
+    "organizationId": 2372338,
+    "thirdpartyCategoryId": null
 }
 ```
 
-#### Get Destinations
+#### Destination GET
 
-This action is used to get a list of destinations related to a destination list.
+This action is used to get list of destinations related to destination list.
 
 ##### Input
 
 |Name|Type|Default|Required|Description|Enum|Example|
 |----|----|-------|--------|-----------|----|-------|
 |destinationListId|integer|None|True|Unique ID for destination list|None|1234567|
+|limit|integer|None|False|Limit for page|None|500|
+|page|integer|None|False|Pagination|None|1|
 
 Example input:
 
 ```
 {
-  "destinationListId": 1234567
+  "destinationListId": 1234567,
+  "limit": 500,
+  "page": 1
 }
 ```
 
@@ -166,24 +2624,38 @@ Example output:
 
 ```
 [
-    {
-        "id": "123",
-        "destination": "www.example.com",
-        "type": "domain",
-        "comment": null,
-        "createdAt": "2022-01-27 16:10:37"
-    },
-    {
-        "id": "1234",
-        "destination": "8.8.8.8",
-        "type": "ipv4",
-        "comment": "Sample comment",
-        "createdAt": "2021-12-16 13:18:57"
-    }
+  {
+    "comment": "another comment",
+    "createdAt": "2022-01-14 15:09:21",
+    "destination": "https://example.com",
+    "id": "6672",
+    "type": "domain"
+  },
+  {
+    "comment": "This should be destination count == 5",
+    "createdAt": "2021-12-16 13:18:57",
+    "destination": "https://example.com",
+    "id": "7366",
+    "type": "domain"
+  },
+  {
+    "comment": "python docs",
+    "createdAt": "2021-12-17 14:14:24",
+    "destination": "https://example.com",
+    "id": "3289831",
+    "type": "domain"
+  },
+  {
+    "comment": "sample comment for destination",
+    "createdAt": "2021-12-17 10:55:59",
+    "destination": "https://example.com",
+    "id": "29275814",
+    "type": "ipv4"
+  }
 ]
 ```
 
-#### Create Destination List
+#### Destination Lists POST
 
 This action is used to create a destination list.
 
@@ -191,23 +2663,13 @@ This action is used to create a destination list.
 
 |Name|Type|Default|Required|Description|Enum|Example|
 |----|----|-------|--------|-----------|----|-------|
-|access|string|None|False|Can be allow or block|['allow', 'block']|allow|
-|comment|string|None|False|Information about the destination|None|Suspicious domain|
-|destination|string|None|False|Enter the destination here|None|www.example.com|
-|isGlobal|boolean|None|False|Boolean value indicating global state|None|True|
-|label|string|None|False|Label for the destination list|None|New list|
-|type|string|None|False|Can be DOMAIN, URL or IPV4|['DOMAIN', 'URL', 'IPV4']|URL|
+|payload|dlCreate|None|True|List of destinations|None|JSON Data for new list and all attributes|
 
 Example input:
 
 ```
 {
-  "access": "allow",
-  "comment": "Suspicious domain",
-  "destination": "www.example.com",
-  "isGlobal": true,
-  "label": "New list",
-  "type": "URL"
+  "payload": "JSON Data for new list and all attributes"
 }
 ```
 
@@ -215,7 +2677,7 @@ Example input:
 
 |Name|Type|Required|Description|
 |----|----|--------|-----------|
-|success|dlCollection|True|Successful returned value|
+|success|dlEntity|True|Successful returned value|
 
 Example output:
 
@@ -224,7 +2686,7 @@ Example output:
     "access": "allow",
     "bundleTypeId": 1,
     "createdAt": "2022-01-14T15:09:30+0000",
-    "id": 12345678,
+    "id": 15720088,
     "isGlobal": false,
     "isMspDefault": false,
     "markedForDeletion": false,
@@ -232,11 +2694,11 @@ Example output:
       "destinationCount": 2
     },
     "modifiedAt": "2022-01-14T15:09:30+0000",
-    "name": "TESTLIST123"
+    "name": "NEW CREATED LIST"
 }
 ```
 
-#### Delete Destination List
+#### Destination Lists DELETE
 
 This action is used to delete a destination list.
 
@@ -266,9 +2728,9 @@ Example output:
 []
 ```
 
-#### Get Destination List
+#### Destination List GET
 
-This action is used to get a destination list.
+This action is used to return a destination list.
 
 ##### Input
 
@@ -297,7 +2759,7 @@ Example output:
   "access": "allow",
   "bundleTypeId": 1,
   "createdAt": "2021-12-06T16:03:49+0000",
-  "id": 12345678,
+  "id": 15609742,
   "isGlobal": false,
   "isMspDefault": false,
   "markedForDeletion": false,
@@ -306,12 +2768,12 @@ Example output:
   },
   "modifiedAt": "2022-01-14T15:09:24+0000",
   "name": "ABCList",
-  "organizationId": 1234567,
+  "organizationId": 2372338,
   "thirdpartyCategoryId": null
 }
 ```
 
-#### Get All Destination Lists
+#### Destinations List GET (All)
 
 This action is used to retrieve all destination lists of organization.
 
@@ -347,10 +2809,90 @@ Example output:
     "name": "ABCList",
     "organizationId": 2372338,
     "thirdpartyCategoryId": null
+    },
+    {
+    "access": "block",
+    "bundleTypeId": 1,
+    "createdAt": "2020-05-19T20:58:55+0000",
+    "id": 5798992,
+    "isGlobal": false,
+    "isMspDefault": false,
+    "markedForDeletion": false,
+    "meta": {
+      "applicationCount": 0,
+      "destinationCount": 0,
+      "domainCount": 0,
+      "ipv4Count": 0,
+      "urlCount": 0
+    },
+    "modifiedAt": "2020-05-19T21:11:15+0000",
+    "name": "Block For All",
+    "organizationId": 2303280,
+    "thirdpartyCategoryId": null
+    },
+    {
+    "access": "allow",
+    "bundleTypeId": 1,
+    "createdAt": "2017-10-25T19:45:48+0000",
+    "id": 1912718,
+    "isGlobal": true,
+    "isMspDefault": false,
+    "markedForDeletion": false,
+    "meta": {
+      "applicationCount": 0,
+      "destinationCount": 0,
+      "domainCount": 0,
+      "ipv4Count": 0,
+      "urlCount": 0
+    },
+    "modifiedAt": "2017-10-25T19:45:48+0000",
+    "name": "Global Allow List",
+    "organizationId": 2372338,
+    "thirdpartyCategoryId": null
+    },
+    {
+    "access": "block",
+    "bundleTypeId": 1,
+    "createdAt": "2017-10-25T19:45:48+0000",
+    "id": 1912720,
+    "isGlobal": true,
+    "isMspDefault": false,
+    "markedForDeletion": false,
+    "meta": {
+      "applicationCount": 0,
+      "destinationCount": 0,
+      "domainCount": 0,
+      "ipv4Count": 0,
+      "urlCount": 0
+    },
+    "modifiedAt": "2017-10-25T19:45:48+0000",
+    "name": "Global Block List",
+    "organizationId": 2372338,
+    "thirdpartyCategoryId": null
+    },
+    {
+    "access": "allow",
+    "bundleTypeId": 1,
+    "createdAt": "2022-01-14T15:09:30+0000",
+    "id": 15720088,
+    "isGlobal": false,
+    "isMspDefault": false,
+    "markedForDeletion": false,
+    "meta": {
+      "applicationCount": 0,
+      "destinationCount": 2,
+      "domainCount": 1,
+      "ipv4Count": 1,
+      "urlCount": 0
+    },
+    "modifiedAt": "2022-01-14T15:09:30+0000",
+    "name": "NEW CREATED LIST",
+    "organizationId": 2372338,
+    "thirdpartyCategoryId": null
 }
 ```
 
-#### Rename Destination List
+#### Destination Lists PATCH
 
 This action is used to rename a destination list.
 
@@ -359,14 +2901,14 @@ This action is used to rename a destination list.
 |Name|Type|Default|Required|Description|Enum|Example|
 |----|----|-------|--------|-----------|----|-------|
 |destinationListId|integer|None|True|Unique ID for destination list|None|12345678|
-|label|string|None|True|Title for the destination list|None|New list|
+|payload|dlPatch|None|True|Value containing name to change to|None|Updated Name List|
 
 Example input:
 
 ```
 {
   "destinationListId": 12345678,
-  "label": "New list"
+  "payload": "Updated Name List"
 }
 ```
 
@@ -374,7 +2916,7 @@ Example input:
 
 |Name|Type|Required|Description|
 |----|----|--------|-----------|
-|success|dlCollection|True|Successful returned value|
+|success|dlEntity|True|Successful returned value|
 
 Example output:
 
@@ -383,7 +2925,7 @@ Example output:
   "access": "allow",
   "bundleTypeId": 1,
   "createdAt": "2021-12-06T16:03:49+0000",
-  "id": 12345678,
+  "id": 15609742,
   "isGlobal": false,
   "isMspDefault": false,
   "markedForDeletion": false,
@@ -391,8 +2933,8 @@ Example output:
     "destinationCount": 4
   },
   "modifiedAt": "2022-01-14T15:09:41+0000",
-  "name": "NEW NAME",
-  "organizationId": 1234567,
+  "name": "BBBB",
+  "organizationId": 2372338,
   "thirdpartyCategoryId": null
 }
 ```
@@ -403,18 +2945,34 @@ _This plugin does not contain any triggers._
 
 ### Custom Output Types
 
+#### dResponse
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|Access|string|False|Access can be allow or block. It defines destinationList type.|
+|Created At|date|False|Timestamp for CreatedAt|
+|ID|integer|False|Unique ID of the destination list.|
+|Is Global|boolean|False|IsGlobal can be true or false. There is only one default destination list of type allow or block for an organization.|
+|Is MSP Default|boolean|False|Boolean for isMspDefault|
+|Marked For Deletion|boolean|False|Boolean for markedForDeletion|
+|Meta Data|meta|False|None|
+|Modified At|date|False|Timestamp for ModifiedAt|
+|Name|string|False|Name of the DL list|
+|Organization ID|integer|False|ID of organization|
+|Third Party Category ID|integer|False|ID, if any, for third parties|
+
 #### destinationList
 
 |Name|Type|Required|Description|
 |----|----|--------|-----------|
-|Access|string|False|Can be allow or block|
-|Created At|date|False|Timestamp for creation of the destination list|
+|Access|string|False|Access can be allow or block. It defines destinationList type.|
+|Created At|date|False|Timestamp for CreatedAt|
 |ID|integer|False|Unique ID of the destination list.|
-|Is Global|boolean|False|Boolean value indicating global state|
-|Is MSP Default|boolean|False|Whether or not MSP is default|
-|Label|string|False|Title for the destination list|
-|Marked For Deletion|boolean|False|Whether or not destination list is marked for deletion|
-|Modified At|date|False|Timestamp for modification of the destination list|
+|Is Global|boolean|False|IsGlobal can be true or false. There is only one default destination list of type allow or block for an organization.|
+|Is MSP Default|boolean|False|Boolean for isMspDefault|
+|Marked For Deletion|boolean|False|None|
+|Modified At|date|False|Timestamp for ModifiedAt|
+|Name|string|False|Name of the DL list|
 |Organization ID|integer|False|ID of organization|
 |Third Party Category Id|integer|False|ID, if any, for third parties|
 
@@ -422,35 +2980,51 @@ _This plugin does not contain any triggers._
 
 |Name|Type|Required|Description|
 |----|----|--------|-----------|
-|Comment|string|False|Information about the destination|
-|Label|string|True|Destination name can be domain, URL or IP|
-|Type|string|True|Can be DOMAIN, URL, IPV4|
+|Comment|string|False|None|
+|Destination|string|True|Destination can be DOMAIN, URL or IP|
+|Type|string|True|Type can be DOMAIN, URL, IPV4|
 
 #### destinationsEntity
 
 |Name|Type|Required|Description|
 |----|----|--------|-----------|
-|Comment|string|False|Information about domain|
-|Created At|date|False|Timestamp for creation of entity|
-|Destination|string|False|Destination can be DOMAIN, URL or IP|
-|ID|string|False|Unique ID of the destination|
-|Type|string|False|Type can be DOMAIN, URL or IPV4|
+|Comment|string|False|None|
+|CreatedAt|date|False|Date and time it has been created at|
+|Destination|string|False|Destination can be DOMAIN, URL, IP|
+|Id|string|False|Unique ID of the destination|
+|TypeOf|string|False|Type can be DOMAIN, URL, IPV4|
 
-#### dlCollection
+#### destinationsList
 
 |Name|Type|Required|Description|
 |----|----|--------|-----------|
-|Access|string|False|Can be allow or block|
-|Created At|date|False|Timestamp for creation of the destination list|
-|ID|integer|False|Unique ID of the destination list|
-|Is Global|boolean|False|Boolean value indicating global state|
-|Is MSP Default|boolean|False|Whether or not MSP is default|
-|Label|string|False|Title for the destination list|
-|Marked For Deletion|boolean|False|Whether or not destination list is marked for deletion|
-|Meta Data|meta|False|Secondary information|
-|Modified At|date|False|Timestamp for modification of the destination list|
-|Organization ID|integer|False|ID of organization|
-|Third Party Category ID|integer|False|ID, if any, for third parties|
+|Comment|string|False|Comment for the destination|
+|Destination|string|True|Name of the destination|
+
+#### dlCollection
+
+|Name|Type|Required|Description|Example|
+|----|----|--------|-----------|-------|
+|Access|string|True|Access can be allow or block. It defines destinationList type, e.g. allow|
+|Created At|integer|True|example, 1490206249|
+|ID|integer|True|Unique id of the destination list.|
+|Is Global|boolean|True|isGlobal can be true or false. There is only one default destination list of type allow or block for an organization.|
+|Is MSP Default|boolean|True|example, false|
+|Marked For Deletion|boolean|True|example, false|
+|Meta Data|[]meta|False|None|
+|Modified At|integer|True|example, 1490206249|
+|Name|string|True|Name of the DL list|
+|Organization Id|integer|True|ID of org, e.g. 2345678|
+|Third Party Category Id|integer|True|example, 0|
+
+#### dlCreate
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|Access|string|True|Access can be allow or block. It defines destinationList type.|
+|Destinations|[]destinations|False|Destinations to add to new list|
+|IsGlobal|boolean|True|IsGlobal can be true or false. There is only one default destination list of type allow or block for an organization.|
+|Name|string|True|None|
 
 #### dlDelete
 
@@ -458,14 +3032,36 @@ _This plugin does not contain any triggers._
 |----|----|--------|-----------|
 |Delete|object|False|Delete|
 
+#### dlEntity
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|Access|string|False|Access can be allow or block. It defines destinationList type.|
+|Created At|date|False|Timestamp for CreatedAt|
+|ID|integer|False|Unique ID of the destination list.|
+|Is Global|boolean|False|IsGlobal can be true or false. There is only one default destination list of type allow or block for an organization.|
+|Is MSP Default|boolean|False|Boolean for isMspDefault|
+|Marked For Deletion|boolean|False|None|
+|Meta Data|meta|False|None|
+|Modified At|date|False|Timestamp for ModifiedAt|
+|Name|string|False|Name of the DL list|
+|Organization ID|integer|False|ID of organization|
+|Third Party Category ID|integer|False|ID, if any, for third parties|
+
+#### dlPatch
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|Name|string|True|Name of the destination list|
+
 #### meta
 
 |Name|Type|Required|Description|
 |----|----|--------|-----------|
-|DestinationCount|integer|False|Total number of destinations in a destination list|
-|DomainCount|integer|False|Total number of domains in a destination list|
-|Ipv4Count|integer|False|Total number of IP's in a destination list|
-|UrlCount|integer|False|Total number of URLs in a destination list|
+|DestinationCount|integer|False|Total number of destinations in a destination list.|
+|DomainCount|integer|False|Total number of domains in a destination list. Domains are part of total destinations in a destination lists.|
+|Ipv4Count|integer|False|Total number of IP's in a destination list. IP's are part of total destinations in destination lists.|
+|UrlCount|integer|False|Total number of URLs in a destination list. URLs are part of total destinations in a destination lists.|
 
 
 ## Troubleshooting
@@ -474,11 +3070,11 @@ _This plugin does not contain any troubleshooting information._
 
 # Version History
 
-* 1.0.0 - Initial plugin includes create and modify destination lists
+* 1.0.0 - Initial plugin
 
 # Links
 
 ## References
 
-* [Cisco Umbrella](https://umbrella.cisco.com/)
-* [Cisco Umbrella Destinations Docs](https://developer.cisco.com/docs/cloud-security/#!destination-lists-introduction-overview)
+* [Cisco Umbrella Destinations](LINK TO PRODUCT/VENDOR WEBSITE)
+

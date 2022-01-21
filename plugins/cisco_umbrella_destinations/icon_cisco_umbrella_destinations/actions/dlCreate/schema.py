@@ -8,12 +8,7 @@ class Component:
 
 
 class Input:
-    ACCESS = "access"
-    COMMENT = "comment"
-    DESTINATION = "destination"
-    ISGLOBAL = "isGlobal"
-    LABEL = "label"
-    TYPE = "type"
+    PAYLOAD = "payload"
     
 
 class Output:
@@ -26,50 +21,112 @@ class DlCreateInput(insightconnect_plugin_runtime.Input):
   "type": "object",
   "title": "Variables",
   "properties": {
-    "access": {
-      "type": "string",
-      "title": "Access",
-      "description": "Can be allow or block",
-      "enum": [
-        "allow",
-        "block"
-      ],
+    "payload": {
+      "$ref": "#/definitions/dlCreate",
+      "title": "Payload",
+      "description": "List of destinations",
       "order": 1
+    }
+  },
+  "required": [
+    "payload"
+  ],
+  "definitions": {
+    "destinations": {
+      "type": "object",
+      "title": "destinations",
+      "properties": {
+        "comment": {
+          "type": "string",
+          "title": "Comment",
+          "description": "None",
+          "order": 3
+        },
+        "destination": {
+          "type": "string",
+          "title": "Destination",
+          "description": "Destination can be DOMAIN, URL or IP",
+          "order": 1
+        },
+        "type": {
+          "type": "string",
+          "title": "Type",
+          "description": "Type can be DOMAIN, URL, IPV4",
+          "order": 2
+        }
+      },
+      "required": [
+        "destination",
+        "type"
+      ]
     },
-    "comment": {
-      "type": "string",
-      "title": "Comment",
-      "description": "Information about the destination",
-      "order": 6
-    },
-    "destination": {
-      "type": "string",
-      "title": "Domain Name / URL / IP Address",
-      "description": "Enter the destination here",
-      "order": 4
-    },
-    "isGlobal": {
-      "type": "boolean",
-      "title": "Is Global",
-      "description": "Boolean value indicating global state",
-      "order": 2
-    },
-    "label": {
-      "type": "string",
-      "title": "Name",
-      "description": "Label for the destination list",
-      "order": 3
-    },
-    "type": {
-      "type": "string",
-      "title": "Type",
-      "description": "Can be DOMAIN, URL or IPV4",
-      "enum": [
-        "DOMAIN",
-        "URL",
-        "IPV4"
+    "dlCreate": {
+      "type": "object",
+      "title": "dlCreate",
+      "properties": {
+        "access": {
+          "type": "string",
+          "title": "Access",
+          "description": "Access can be allow or block. It defines destinationList type.",
+          "order": 1
+        },
+        "destinations": {
+          "type": "array",
+          "title": "Destinations",
+          "description": "Destinations to add to new list",
+          "items": {
+            "$ref": "#/definitions/destinations"
+          },
+          "order": 4
+        },
+        "isGlobal": {
+          "type": "boolean",
+          "title": "IsGlobal",
+          "description": "IsGlobal can be true or false. There is only one default destination list of type allow or block for an organization.",
+          "order": 2
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "None",
+          "order": 3
+        }
+      },
+      "required": [
+        "access",
+        "isGlobal",
+        "name"
       ],
-      "order": 5
+      "definitions": {
+        "destinations": {
+          "type": "object",
+          "title": "destinations",
+          "properties": {
+            "comment": {
+              "type": "string",
+              "title": "Comment",
+              "description": "None",
+              "order": 3
+            },
+            "destination": {
+              "type": "string",
+              "title": "Destination",
+              "description": "Destination can be DOMAIN, URL or IP",
+              "order": 1
+            },
+            "type": {
+              "type": "string",
+              "title": "Type",
+              "description": "Type can be DOMAIN, URL, IPV4",
+              "order": 2
+            }
+          },
+          "required": [
+            "destination",
+            "type"
+          ]
+        }
+      }
     }
   }
 }
@@ -86,7 +143,7 @@ class DlCreateOutput(insightconnect_plugin_runtime.Output):
   "title": "Variables",
   "properties": {
     "success": {
-      "$ref": "#/definitions/dlCollection",
+      "$ref": "#/definitions/dlEntity",
       "title": "Success",
       "description": "Successful returned value",
       "order": 1
@@ -96,67 +153,67 @@ class DlCreateOutput(insightconnect_plugin_runtime.Output):
     "success"
   ],
   "definitions": {
-    "dlCollection": {
+    "dlEntity": {
       "type": "object",
-      "title": "dlCollection",
+      "title": "dlEntity",
       "properties": {
         "access": {
           "type": "string",
           "title": "Access",
-          "description": "Can be allow or block",
+          "description": "Access can be allow or block. It defines destinationList type.",
           "order": 3
         },
         "createdAt": {
           "type": "string",
           "title": "Created At",
           "displayType": "date",
-          "description": "Timestamp for creation of the destination list",
+          "description": "Timestamp for CreatedAt",
           "format": "date-time",
           "order": 7
         },
         "id": {
           "type": "integer",
           "title": "ID",
-          "description": "Unique ID of the destination list",
+          "description": "Unique ID of the destination list.",
           "order": 1
         },
         "isGlobal": {
           "type": "boolean",
           "title": "Is Global",
-          "description": "Boolean value indicating global state",
+          "description": "IsGlobal can be true or false. There is only one default destination list of type allow or block for an organization.",
           "order": 4
         },
         "isMspDefault": {
           "type": "boolean",
           "title": "Is MSP Default",
-          "description": "Whether or not MSP is default",
+          "description": "Boolean for isMspDefault",
           "order": 9
-        },
-        "label": {
-          "type": "string",
-          "title": "Label",
-          "description": "Title for the destination list",
-          "order": 5
         },
         "markedForDeletion": {
           "type": "boolean",
           "title": "Marked For Deletion",
-          "description": "Whether or not destination list is marked for deletion",
+          "description": "None",
           "order": 10
         },
         "meta": {
           "$ref": "#/definitions/meta",
-          "title": "Metadata",
-          "description": "Secondary information",
+          "title": "Meta Data",
+          "description": "None",
           "order": 11
         },
         "modifiedAt": {
           "type": "string",
           "title": "Modified At",
           "displayType": "date",
-          "description": "Timestamp for modification of the destination list",
+          "description": "Timestamp for ModifiedAt",
           "format": "date-time",
           "order": 8
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of the DL list",
+          "order": 5
         },
         "organizationId": {
           "type": "integer",
@@ -179,25 +236,25 @@ class DlCreateOutput(insightconnect_plugin_runtime.Output):
             "destinationCount": {
               "type": "integer",
               "title": "DestinationCount",
-              "description": "Total number of destinations in a destination list",
+              "description": "Total number of destinations in a destination list.",
               "order": 1
             },
             "domainCount": {
               "type": "integer",
               "title": "DomainCount",
-              "description": "Total number of domains in a destination list",
+              "description": "Total number of domains in a destination list. Domains are part of total destinations in a destination lists.",
               "order": 2
             },
             "ipv4Count": {
               "type": "integer",
               "title": "Ipv4Count",
-              "description": "Total number of IPs in a destination list",
+              "description": "Total number of IP's in a destination list. IP's are part of total destinations in destination lists.",
               "order": 4
             },
             "urlCount": {
               "type": "integer",
               "title": "UrlCount",
-              "description": "Total number of URLs in a destination list",
+              "description": "Total number of URLs in a destination list. URLs are part of total destinations in a destination lists.",
               "order": 3
             }
           }
@@ -211,25 +268,25 @@ class DlCreateOutput(insightconnect_plugin_runtime.Output):
         "destinationCount": {
           "type": "integer",
           "title": "DestinationCount",
-          "description": "Total number of destinations in a destination list",
+          "description": "Total number of destinations in a destination list.",
           "order": 1
         },
         "domainCount": {
           "type": "integer",
           "title": "DomainCount",
-          "description": "Total number of domains in a destination list",
+          "description": "Total number of domains in a destination list. Domains are part of total destinations in a destination lists.",
           "order": 2
         },
         "ipv4Count": {
           "type": "integer",
           "title": "Ipv4Count",
-          "description": "Total number of IPs in a destination list",
+          "description": "Total number of IP's in a destination list. IP's are part of total destinations in destination lists.",
           "order": 4
         },
         "urlCount": {
           "type": "integer",
           "title": "UrlCount",
-          "description": "Total number of URLs in a destination list",
+          "description": "Total number of URLs in a destination list. URLs are part of total destinations in a destination lists.",
           "order": 3
         }
       }

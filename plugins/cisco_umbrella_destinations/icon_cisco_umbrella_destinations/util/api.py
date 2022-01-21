@@ -26,6 +26,7 @@ class CiscoUmbrellaManagementAPI:
             None,
             None,
             None,
+            action_name="GET all destination lists",
         )
 
     # GET destination list by ID
@@ -37,6 +38,7 @@ class CiscoUmbrellaManagementAPI:
             None,
             None,
             None,
+            action_name="GET destination list by ID",
         )
 
     # POST a new destination list
@@ -48,6 +50,7 @@ class CiscoUmbrellaManagementAPI:
             None,
             None,
             data=data,
+            action_name="Create a new destination list",
         )
 
     # PATCH (Update) destination list
@@ -59,6 +62,7 @@ class CiscoUmbrellaManagementAPI:
             None,
             None,
             data=data,
+            action_name="Update destination list name by ID",
         )
 
     # DELETE destination list
@@ -70,6 +74,7 @@ class CiscoUmbrellaManagementAPI:
             None,
             None,
             None,
+            action_name="Delete destination list by ID",
         )
 
     # DESTINATIONS API
@@ -83,6 +88,7 @@ class CiscoUmbrellaManagementAPI:
             None,
             None,
             None,
+            action_name="GET list of destinations in destionation list",
         )
 
     # POST destinations to existing destination list
@@ -94,6 +100,7 @@ class CiscoUmbrellaManagementAPI:
             None,
             None,
             data=data,
+            action_name="Create destinations in existing destination list",
         )
 
     # DELETE list of destinations from destination list
@@ -105,6 +112,7 @@ class CiscoUmbrellaManagementAPI:
             None,
             None,
             data=data,
+            action_name="Delete destinations from destination list",
         )
 
     def _call_api(
@@ -119,6 +127,8 @@ class CiscoUmbrellaManagementAPI:
         params: Optional[dict] = None,
         # data(payload) -> dict in body
         data: Optional = None,
+        # Action name -> Hard coded written action name for error messages
+        action_name: Optional[str] = None,
     ) -> dict:
 
         headers = {
@@ -141,22 +151,42 @@ class CiscoUmbrellaManagementAPI:
                 headers=headers,
                 auth=HTTPBasicAuth(self.api_key, self.api_secret),
             )
-            if response.status_code == 400:
-                raise PluginException(cause="Invalid input data, ensure the information you are inputting is correct")
+
             if response.status_code == 401:
-                raise PluginException(preset=PluginException.Preset.USERNAME_PASSWORD)
+                raise PluginException(
+                    preset=PluginException.Preset.USERNAME_PASSWORD,
+                    cause=f"Invalid request for {action_name}. Invalid API key provided.",
+                    assistance="Verify your API key is correct.",
+                )
             if response.status_code == 403:
-                raise PluginException(preset=PluginException.Preset.UNAUTHORIZED)
+                raise PluginException(
+                    preset=PluginException.Preset.UNAUTHORIZED,
+                    cause=f"Invalid request for {action_name}. Unauthorized access to this service.",
+                    assistance="Verify the permissions for your account and try again.",
+                )
             if response.status_code == 404:
-                raise PluginException(preset=PluginException.Preset.NOT_FOUND)
+                raise PluginException(
+                    preset=PluginException.Preset.NOT_FOUND,
+                    cause=f"Invalid request for {action_name}. The requested item was not found.",
+                    assistance="Check the syntax of your query and try again.",
+                )
             if response.status_code >= 500:
-                raise PluginException(preset=PluginException.Preset.SERVER_ERROR)
+                raise PluginException(
+                    preset=PluginException.Preset.SERVER_ERROR,
+                    cause=f"Invalid request for {action_name}. Server Error.",
+                    data=response.text,
+                )
             if 200 <= response.status_code < 300:
                 try:
                     return response.json()
                 except JSONDecodeError:
-                    raise PluginException(preset=PluginException.Preset.INVALID_JSON)
+                    raise PluginException(
+                        preset=PluginException.Preset.INVALID_JSON,
+                        cause=f"Invalid request for {action_name}. Invalid JSON returned",
+                        data=response.text,
+                    )
 
+        # Why doesnt this work for me?
         except requests.exceptions.HTTPError as e:
             self.logger.info(f"Call to Cisco Umbrella Management API failed: {e}")
             raise PluginException(preset=PluginException.Preset.UNKNOWN, data=response.text) from e

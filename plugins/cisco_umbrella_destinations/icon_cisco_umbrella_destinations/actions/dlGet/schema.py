@@ -4,7 +4,7 @@ import json
 
 
 class Component:
-    DESCRIPTION = "Get a destination list"
+    DESCRIPTION = "Return a destination list"
 
 
 class Input:
@@ -62,54 +62,54 @@ class DlGetOutput(insightconnect_plugin_runtime.Output):
         "access": {
           "type": "string",
           "title": "Access",
-          "description": "Can be allow or block",
+          "description": "Access can be allow or block. It defines destinationList type.",
           "order": 3
         },
         "createdAt": {
           "type": "string",
           "title": "Created At",
           "displayType": "date",
-          "description": "Timestamp for creation of the destination list",
+          "description": "Timestamp for CreatedAt",
           "format": "date-time",
           "order": 7
         },
         "id": {
           "type": "integer",
           "title": "ID",
-          "description": "Unique ID of the destination list",
+          "description": "Unique ID of the destination list.",
           "order": 1
         },
         "isGlobal": {
           "type": "boolean",
           "title": "Is Global",
-          "description": "Boolean value indicating global state",
+          "description": "IsGlobal can be true or false. There is only one default destination list of type allow or block for an organization.",
           "order": 4
         },
         "isMspDefault": {
           "type": "boolean",
           "title": "Is MSP Default",
-          "description": "Whether or not MSP is default",
+          "description": "Boolean for isMspDefault",
           "order": 9
-        },
-        "label": {
-          "type": "string",
-          "title": "Label",
-          "description": "Title for the destination list",
-          "order": 5
         },
         "markedForDeletion": {
           "type": "boolean",
           "title": "Marked For Deletion",
-          "description": "Whether or not destination list is marked for deletion",
+          "description": "None",
           "order": 10
         },
         "modifiedAt": {
           "type": "string",
           "title": "Modified At",
           "displayType": "date",
-          "description": "Timestamp for modification of the destination list",
+          "description": "Timestamp for ModifiedAt",
           "format": "date-time",
           "order": 8
+        },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Name of the DL list",
+          "order": 5
         },
         "organizationId": {
           "type": "integer",
@@ -119,7 +119,7 @@ class DlGetOutput(insightconnect_plugin_runtime.Output):
         },
         "thirdpartyCategoryId": {
           "type": "integer",
-          "title": "Third Party Category ID",
+          "title": "Third Party Category Id",
           "description": "ID, if any, for third parties",
           "order": 6
         }

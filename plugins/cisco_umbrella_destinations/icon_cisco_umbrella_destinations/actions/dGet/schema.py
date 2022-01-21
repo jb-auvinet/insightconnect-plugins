@@ -4,11 +4,13 @@ import json
 
 
 class Component:
-    DESCRIPTION = "Get a list of destinations related to a destination list"
+    DESCRIPTION = "Get list of destinations related to destination list"
 
 
 class Input:
     DESTINATIONLISTID = "destinationListId"
+    LIMIT = "limit"
+    PAGE = "page"
     
 
 class Output:
@@ -26,6 +28,18 @@ class DGetInput(insightconnect_plugin_runtime.Input):
       "title": "Destination List ID",
       "description": "Unique ID for destination list",
       "order": 1
+    },
+    "limit": {
+      "type": "integer",
+      "title": "Limit",
+      "description": "Limit for page",
+      "order": 3
+    },
+    "page": {
+      "type": "integer",
+      "title": "Page",
+      "description": "Pagination",
+      "order": 2
     }
   },
   "required": [
@@ -62,33 +76,33 @@ class DGetOutput(insightconnect_plugin_runtime.Output):
         "comment": {
           "type": "string",
           "title": "Comment",
-          "description": "Information about domain",
+          "description": "None",
           "order": 4
         },
         "createdAt": {
           "type": "string",
-          "title": "Created At",
+          "title": "CreatedAt",
           "displayType": "date",
-          "description": "Timestamp for creation of entity",
+          "description": "Date and time it has been created at",
           "format": "date-time",
           "order": 5
         },
         "destination": {
           "type": "string",
           "title": "Destination",
-          "description": "Destination can be DOMAIN, URL or IP",
+          "description": "Destination can be DOMAIN, URL, IP",
           "order": 2
         },
         "id": {
           "type": "string",
-          "title": "ID",
+          "title": "Id",
           "description": "Unique ID of the destination",
           "order": 1
         },
         "typeOf": {
           "type": "string",
-          "title": "Type",
-          "description": "Type can be DOMAIN, URL or IPV4",
+          "title": "TypeOf",
+          "description": "Type can be DOMAIN, URL, IPV4",
           "order": 3
         }
       }

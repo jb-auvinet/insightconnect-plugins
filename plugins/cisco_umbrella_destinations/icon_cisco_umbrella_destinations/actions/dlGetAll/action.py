@@ -13,5 +13,5 @@ class DlGetAll(insightconnect_plugin_runtime.Action):
             output=DlGetAllOutput(),
         )
 
-    def run(self, _params=None):
+    def run(self, params=None):
         return {Output.SUCCESS: self.connection.client.get_destination_lists()}

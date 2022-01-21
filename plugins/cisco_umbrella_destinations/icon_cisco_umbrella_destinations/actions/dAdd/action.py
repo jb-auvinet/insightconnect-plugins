@@ -15,17 +15,7 @@ class DAdd(insightconnect_plugin_runtime.Action):
         )
 
     def run(self, params={}):
-        destination_list_id = params.get(Input.DESTINATIONLISTID)
-        destination = params.get(Input.DESTINATION)
-        comment = params.get(Input.COMMENT)
+        dl_id = params.get(Input.DESTINATIONLISTID)
+        payload = params.get(Input.PAYLOAD)
 
-        if comment:
-            data = [{"destination": destination, "comment": comment}]
-        else:
-            data = [{"destination": destination}]
-
-        return {
-            Output.SUCCESS: self.connection.client.create_destinations(
-                destination_list_id=destination_list_id, data=data
-            )
-        }
+        return {Output.SUCCESS: self.connection.client.create_destinations(destination_list_id=dl_id, data=payload)}
