@@ -19,7 +19,7 @@ from ..unit_test.mock import (
 
 
 class TestDlGet(TestCase):
-    def test_dlGet(self):
+    def setUp(self) -> None:
         self.connection = Connection()
         self.connection.logger = logging.getLogger("Connection logger")
         self.connection.connect(STUB_CONNECTION)
@@ -27,6 +27,9 @@ class TestDlGet(TestCase):
         self.action = DlGet()
         self.action.connection = self.connection
         self.action.logger = logging.getLogger("Action logger")
+
+    # def test_dlGet(self):
+
 
     # @mock.patch("requests.request", side_effect=mock_request_200)
     def test_destination_list_get_success(self):
