@@ -35,7 +35,7 @@ def mocked_request(side_effect: Callable) -> None:
 
 
 def mock_conditions(method: str, url: str, status_code: int) -> MockResponse:
-    base_url = f"https://management.api.umbrella.com/v1/organizations/{STUB_ORG_ID}/destinationlists"
+    base_url = f"https://management.api.umbrella.com/v1/organizations/{STUB_ORG_ID}/destinationlists/"
     if url == base_url:
         if method == "GET":
             return MockResponse("dlGetAll", status_code)
