@@ -10,7 +10,7 @@ from icon_cisco_umbrella_destinations.actions.dlGet.schema import Input
 import json
 import logging
 
-from unit_test.mock import STUB_CONNECTION, mock_request_200, mocked_request, STUB_DESTINATION_LIST_ID
+from unit_test.mock import STUB_CONNECTION, mock_request_200, STUB_DESTINATION_LIST_ID
 
 
 class TestDlGet(TestCase):
