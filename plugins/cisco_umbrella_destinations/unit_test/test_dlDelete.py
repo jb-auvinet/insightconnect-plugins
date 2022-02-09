@@ -3,23 +3,27 @@ import os
 
 sys.path.append(os.path.abspath("../"))
 
-from unittest import TestCase
+from unittest import TestCase, mock
 from icon_cisco_umbrella_destinations.connection.connection import Connection
 from icon_cisco_umbrella_destinations.actions.dlDelete import DlDelete
 import json
 import logging
+from unit_test.mock import STUB_CONNECTION, mock_request_200, STUB_DESTINATION_LIST_ID
 
 
 class TestDlDelete(TestCase):
-    def test_dlDelete(self):
-        """
-        DO NOT USE PRODUCTION/SENSITIVE DATA FOR UNIT TESTS
+    def setUp(self) -> None:
+        self.connection = Connection()
+        self.connection.logger = logging.getLogger("Connection logger")
+        self.connection.connect(STUB_CONNECTION)
 
-        TODO: Implement test cases here
+        self.action = DlDelete()
+        self.action.connection = self.connection
+        self.action.logger = logging.getLogger("Action logger")
 
-        For information on mocking and unit testing please go here:
+    @mock.patch("requests.request", side_effect=mock_request_200)
+    def test_successful(self, mock_delete):
+        response = self.action.run()
+        expected_response = {"success": {"status": {"code": 200, "text": "OK"}, "data": []}}
 
-        https://docs.google.com/document/d/1PifePDG1-mBcmNYE8dULwGxJimiRBrax5BIDG_0TFQI/edit?usp=sharing
-        """
-
-        self.fail("Unimplemented Test Case")
+        self.assertEqual(response, expected_response)
