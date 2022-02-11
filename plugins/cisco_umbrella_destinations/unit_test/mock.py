@@ -36,26 +36,25 @@ def mocked_request(side_effect: Callable) -> None:
 
 def mock_conditions(method: str, url: str, status_code: int) -> MockResponse:
     print(method, url, status_code)
-    base_url = f"https://management.api.umbrella.com/v1/organizations/{STUB_ORG_ID}/destinationlists/"
+    base_url = f"https://management.api.umbrella.com/v1/organizations/{STUB_ORG_ID}/destinationlists"
     if url == base_url:
         if method == "GET":
-            print("I am here!!!")
             return MockResponse("dlGetAll", status_code)
         if method == "POST":
             return MockResponse("dlCreate", status_code)
-    if url == base_url + f"{STUB_DESTINATION_LIST_ID}":
+    if url == base_url + f"/{STUB_DESTINATION_LIST_ID}":
         if method == "GET":
             return MockResponse("dlGet", status_code)
         if method == "PATCH":
             return MockResponse("dlPatch", status_code)
         if method == "DELETE":
             return MockResponse("dlDelete", status_code)
-    if url == base_url + f"{STUB_DESTINATION_LIST_ID}/destinations":
+    if url == base_url + f"/{STUB_DESTINATION_LIST_ID}/destinations":
         if method == "GET":
             return MockResponse("dGet", status_code)
         if method == "POST":
             return MockResponse("dAdd", status_code)
-    if url == base_url + f"{STUB_DESTINATION_LIST_ID}/destinations/remove":
+    if url == base_url + f"/{STUB_DESTINATION_LIST_ID}/destinations/remove":
         return MockResponse("dDelete", status_code)
 
 
