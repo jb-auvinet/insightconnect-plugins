@@ -24,7 +24,7 @@ class MockResponse:
 
     def json(self):
         with open(
-            os.path.join(os.path.dirname(os.path.realpath(__file__)), f"responses/{self.filename}.json.resp")
+                os.path.join(os.path.dirname(os.path.realpath(__file__)), f"responses/{self.filename}.json.resp")
         ) as file:
             return json.load(file)
 
@@ -35,7 +35,6 @@ def mocked_request(side_effect: Callable) -> None:
 
 
 def mock_conditions(method: str, url: str, status_code: int) -> MockResponse:
-    print(method, url, status_code)
     base_url = f"https://management.api.umbrella.com/v1/organizations/{STUB_ORG_ID}/destinationlists"
     if url == base_url:
         if method == "GET":
@@ -71,6 +70,10 @@ def mock_request_401(*args, **kwargs) -> MockResponse:
 
 
 def mock_request_403(*args, **kwargs) -> MockResponse:
+    return mock_conditions(args[0], args[1], 403)
+
+
+def mock_request_404(*args, **kwargs) -> MockResponse:
     return mock_conditions(args[0], args[1], 403)
 
 
