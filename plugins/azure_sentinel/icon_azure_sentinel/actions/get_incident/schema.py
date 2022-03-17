@@ -4,7 +4,7 @@ import json
 
 
 class Component:
-    DESCRIPTION = "This action is used to get details for one specific incident"
+    DESCRIPTION = "Get a specific incident from a given workspace and resource group"
 
 
 class Input:
@@ -15,8 +15,8 @@ class Input:
     
 
 class Output:
+    ETAG = "etag"
     ID = "id"
-    JTAG = "jtag"
     NAME = "name"
     PROPERTIES = "properties"
     TYPE = "type"
@@ -37,7 +37,7 @@ class GetIncidentInput(insightconnect_plugin_runtime.Input):
     "resourceGroupName": {
       "type": "string",
       "title": "Resource Group Name",
-      "description": "The name of the resource group within the user's subscription",
+      "description": "The name of the resource group within the user's subscription. The name is case-insensitive",
       "order": 2
     },
     "subscriptionId": {
@@ -72,17 +72,17 @@ class GetIncidentOutput(insightconnect_plugin_runtime.Output):
   "type": "object",
   "title": "Variables",
   "properties": {
+    "etag": {
+      "type": "string",
+      "title": "Etag",
+      "description": "Etag of the incident",
+      "order": 4
+    },
     "id": {
       "type": "string",
       "title": "Full Incident ID",
       "description": "Full incident ID",
       "order": 1
-    },
-    "jtag": {
-      "type": "string",
-      "title": "Etag",
-      "description": "Etag of the incident",
-      "order": 4
     },
     "name": {
       "type": "string",
@@ -122,7 +122,7 @@ class GetIncidentOutput(insightconnect_plugin_runtime.Output):
         },
         "ManagedIdentity": {
           "type": "string",
-          "title": "Managed Indentity",
+          "title": "Managed Indetity",
           "description": "Managed identity",
           "order": 3
         },
@@ -398,7 +398,7 @@ class GetIncidentOutput(insightconnect_plugin_runtime.Output):
             },
             "ManagedIdentity": {
               "type": "string",
-              "title": "Managed Indentity",
+              "title": "Managed Indetity",
               "description": "Managed identity",
               "order": 3
             },
@@ -564,7 +564,7 @@ class GetIncidentOutput(insightconnect_plugin_runtime.Output):
                 },
                 "ManagedIdentity": {
                   "type": "string",
-                  "title": "Managed Indentity",
+                  "title": "Managed Indetity",
                   "description": "Managed identity",
                   "order": 3
                 },
@@ -644,7 +644,7 @@ class GetIncidentOutput(insightconnect_plugin_runtime.Output):
             },
             "ManagedIdentity": {
               "type": "string",
-              "title": "Managed Indentity",
+              "title": "Managed Indetity",
               "description": "Managed identity",
               "order": 3
             },

@@ -4,7 +4,7 @@ import json
 
 
 class Component:
-    DESCRIPTION = "This action is used to get all alerts for a given incident"
+    DESCRIPTION = "Get all incidents alerts"
 
 
 class Input:
@@ -33,7 +33,7 @@ class ListAlertsInput(insightconnect_plugin_runtime.Input):
     "resourceGroupName": {
       "type": "string",
       "title": "Resource Group Name",
-      "description": "The name of the resource group within the user's subscription",
+      "description": "The name of the resource group within the user's subscription. The name is case-insensitive",
       "order": 2
     },
     "subscriptionId": {
@@ -327,7 +327,7 @@ class ListAlertsOutput(insightconnect_plugin_runtime.Output):
                 },
                 "ManagedIdentity": {
                   "type": "string",
-                  "title": "Managed Indentity",
+                  "title": "Managed Indetity",
                   "description": "Managed identity",
                   "order": 3
                 },
@@ -403,7 +403,7 @@ class ListAlertsOutput(insightconnect_plugin_runtime.Output):
                     },
                     "ManagedIdentity": {
                       "type": "string",
-                      "title": "Managed Indentity",
+                      "title": "Managed Indetity",
                       "description": "Managed identity",
                       "order": 3
                     },
@@ -455,7 +455,7 @@ class ListAlertsOutput(insightconnect_plugin_runtime.Output):
             },
             "ManagedIdentity": {
               "type": "string",
-              "title": "Managed Indentity",
+              "title": "Managed Indetity",
               "description": "Managed identity",
               "order": 3
             },
@@ -531,7 +531,7 @@ class ListAlertsOutput(insightconnect_plugin_runtime.Output):
                 },
                 "ManagedIdentity": {
                   "type": "string",
-                  "title": "Managed Indentity",
+                  "title": "Managed Indetity",
                   "description": "Managed identity",
                   "order": 3
                 },
@@ -783,7 +783,7 @@ class ListAlertsOutput(insightconnect_plugin_runtime.Output):
             },
             "ManagedIdentity": {
               "type": "string",
-              "title": "Managed Indentity",
+              "title": "Managed Indetity",
               "description": "Managed identity",
               "order": 3
             },
@@ -859,7 +859,7 @@ class ListAlertsOutput(insightconnect_plugin_runtime.Output):
                 },
                 "ManagedIdentity": {
                   "type": "string",
-                  "title": "Managed Indentity",
+                  "title": "Managed Indetity",
                   "description": "Managed identity",
                   "order": 3
                 },
@@ -911,7 +911,7 @@ class ListAlertsOutput(insightconnect_plugin_runtime.Output):
         },
         "ManagedIdentity": {
           "type": "string",
-          "title": "Managed Indentity",
+          "title": "Managed Indetity",
           "description": "Managed identity",
           "order": 3
         },
@@ -987,7 +987,7 @@ class ListAlertsOutput(insightconnect_plugin_runtime.Output):
             },
             "ManagedIdentity": {
               "type": "string",
-              "title": "Managed Indentity",
+              "title": "Managed Indetity",
               "description": "Managed identity",
               "order": 3
             },

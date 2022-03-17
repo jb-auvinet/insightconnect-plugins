@@ -4,7 +4,7 @@ import json
 
 
 class Component:
-    DESCRIPTION = "Delete an incident from the system"
+    DESCRIPTION = "Delete an incident"
 
 
 class Input:
@@ -27,13 +27,13 @@ class DeleteIncidentInput(insightconnect_plugin_runtime.Input):
     "incidentId": {
       "type": "string",
       "title": "Incident ID",
-      "description": "ID of the incident to delete",
+      "description": "Incident ID",
       "order": 1
     },
     "resourceGroupName": {
       "type": "string",
       "title": "Resource Group Name",
-      "description": "The name of the resource group within the user's subscription",
+      "description": "The name of the resource group within the user's subscription. The name is case-insensitive",
       "order": 2
     },
     "subscriptionId": {

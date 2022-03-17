@@ -33,7 +33,7 @@ class ListIncidentsInput(insightconnect_plugin_runtime.Input):
     "resourceGroupName": {
       "type": "string",
       "title": "Resource Group Name",
-      "description": "The name of the resource group within the user's subscription",
+      "description": "The name of the resource group within the user's subscription. The name is case-insensitive",
       "order": 1
     },
     "subscriptionId": {
@@ -96,7 +96,7 @@ class ListIncidentsOutput(insightconnect_plugin_runtime.Output):
         },
         "ManagedIdentity": {
           "type": "string",
-          "title": "Managed Indentity",
+          "title": "Managed Indetity",
           "description": "Managed identity",
           "order": 3
         },
@@ -162,7 +162,7 @@ class ListIncidentsOutput(insightconnect_plugin_runtime.Output):
             },
             "ManagedIdentity": {
               "type": "string",
-              "title": "Managed Indentity",
+              "title": "Managed Indetity",
               "description": "Managed identity",
               "order": 3
             },
@@ -438,7 +438,7 @@ class ListIncidentsOutput(insightconnect_plugin_runtime.Output):
                 },
                 "ManagedIdentity": {
                   "type": "string",
-                  "title": "Managed Indentity",
+                  "title": "Managed Indetity",
                   "description": "Managed identity",
                   "order": 3
                 },
@@ -604,7 +604,7 @@ class ListIncidentsOutput(insightconnect_plugin_runtime.Output):
                     },
                     "ManagedIdentity": {
                       "type": "string",
-                      "title": "Managed Indentity",
+                      "title": "Managed Indetity",
                       "description": "Managed identity",
                       "order": 3
                     },
@@ -684,7 +684,7 @@ class ListIncidentsOutput(insightconnect_plugin_runtime.Output):
                 },
                 "ManagedIdentity": {
                   "type": "string",
-                  "title": "Managed Indentity",
+                  "title": "Managed Indetity",
                   "description": "Managed identity",
                   "order": 3
                 },
@@ -964,7 +964,7 @@ class ListIncidentsOutput(insightconnect_plugin_runtime.Output):
             },
             "ManagedIdentity": {
               "type": "string",
-              "title": "Managed Indentity",
+              "title": "Managed Indetity",
               "description": "Managed identity",
               "order": 3
             },
@@ -1130,7 +1130,7 @@ class ListIncidentsOutput(insightconnect_plugin_runtime.Output):
                 },
                 "ManagedIdentity": {
                   "type": "string",
-                  "title": "Managed Indentity",
+                  "title": "Managed Indetity",
                   "description": "Managed identity",
                   "order": 3
                 },
@@ -1210,7 +1210,7 @@ class ListIncidentsOutput(insightconnect_plugin_runtime.Output):
             },
             "ManagedIdentity": {
               "type": "string",
-              "title": "Managed Indentity",
+              "title": "Managed Indetity",
               "description": "Managed identity",
               "order": 3
             },

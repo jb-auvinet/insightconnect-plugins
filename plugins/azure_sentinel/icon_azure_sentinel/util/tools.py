@@ -1,4 +1,4 @@
-from typing import Any, Dict, List
+from typing import Any, Dict
 
 
 def return_non_empty(input_dict: Dict[str, Any]) -> Dict[Any, Any]:
@@ -10,7 +10,7 @@ def return_non_empty(input_dict: Dict[str, Any]) -> Dict[Any, Any]:
     """
     temp_dict = {}
     for key, value in input_dict.items():
-        if value is not None and value != "":
+        if value is not None:
             if isinstance(value, dict):
                 return_dict = return_non_empty(value)
                 if return_dict:
@@ -18,17 +18,3 @@ def return_non_empty(input_dict: Dict[str, Any]) -> Dict[Any, Any]:
             else:
                 temp_dict[key] = value
     return temp_dict
-
-
-def map_output(input_dict: Dict[str, Any]) -> Dict[Any, Any]:
-    etag = input_dict.get("etag")
-    if etag:
-        input_dict["etag"] = etag.replace('"', "")
-    return input_dict
-
-
-def map_output_for_list(input_dict: List[Dict]) -> List[Dict]:
-    output_list = []
-    for element in input_dict:
-        output_list.append(map_output(element))
-    return output_list

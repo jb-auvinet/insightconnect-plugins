@@ -30,7 +30,7 @@ class ConnectionSchema(insightconnect_plugin_runtime.Input):
     "tenant_id": {
       "type": "string",
       "title": "Tenant ID",
-      "description": "The Azure Tenant ID is a Global Unique Identifier (GUID) for your Azure Active Directory Tenant",
+      "description": "This is active directory ID",
       "order": 3
     }
   },

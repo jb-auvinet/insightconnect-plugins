@@ -4,7 +4,7 @@ import json
 
 
 class Component:
-    DESCRIPTION = "This action is used to get all bookmarks for a given incident"
+    DESCRIPTION = "Get all incidents bookmarks"
 
 
 class Input:
@@ -97,7 +97,7 @@ class ListBookmarksOutput(insightconnect_plugin_runtime.Output):
         },
         "ManagedIdentity": {
           "type": "string",
-          "title": "Managed Indentity",
+          "title": "Managed Indetity",
           "description": "Managed identity",
           "order": 3
         },
@@ -116,7 +116,7 @@ class ListBookmarksOutput(insightconnect_plugin_runtime.Output):
         "id": {
           "type": "string",
           "title": "ID",
-          "description": "Resource ID",
+          "description": "Azure resource ID",
           "order": 1
         },
         "kind": {
@@ -128,7 +128,7 @@ class ListBookmarksOutput(insightconnect_plugin_runtime.Output):
         "name": {
           "type": "string",
           "title": "Name",
-          "description": "Resource name",
+          "description": "Azure resource name",
           "order": 3
         },
         "properties": {
@@ -169,7 +169,7 @@ class ListBookmarksOutput(insightconnect_plugin_runtime.Output):
             },
             "ManagedIdentity": {
               "type": "string",
-              "title": "Managed Indentity",
+              "title": "Managed Indetity",
               "description": "Managed identity",
               "order": 3
             },
@@ -364,7 +364,7 @@ class ListBookmarksOutput(insightconnect_plugin_runtime.Output):
                 },
                 "ManagedIdentity": {
                   "type": "string",
-                  "title": "Managed Indentity",
+                  "title": "Managed Indetity",
                   "description": "Managed identity",
                   "order": 3
                 },
@@ -587,7 +587,7 @@ class ListBookmarksOutput(insightconnect_plugin_runtime.Output):
             },
             "ManagedIdentity": {
               "type": "string",
-              "title": "Managed Indentity",
+              "title": "Managed Indetity",
               "description": "Managed identity",
               "order": 3
             },

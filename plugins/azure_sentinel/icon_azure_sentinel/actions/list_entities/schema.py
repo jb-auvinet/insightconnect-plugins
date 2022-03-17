@@ -4,7 +4,7 @@ import json
 
 
 class Component:
-    DESCRIPTION = "List all entities from a given incident"
+    DESCRIPTION = "Get all incidents entities"
 
 
 class Input:

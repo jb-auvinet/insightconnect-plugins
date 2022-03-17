@@ -12,6 +12,7 @@ class Connection(insightconnect_plugin_runtime.Connection):
         self.logger = None
 
     def connect(self, params):
+        self.logger.info("Connect: Connecting...")
         tenant_id = params.get(Input.TENANT_ID)
         client_id = params.get(Input.CLIENT_ID)
         client_secret = params.get(Input.CLIENT_SECRET).get("secretKey")
@@ -27,6 +28,6 @@ class Connection(insightconnect_plugin_runtime.Connection):
             raise ConnectionTestException(
                 cause="Unable to authorize against Microsoft graph API.",
                 assistance="The plugin connection configured may not be authorized to connect "
-                "Please check your connection information, and contact "
-                "your Azure administrator if you need more assistance.",
+                "to the Microsoft Graph API. Please contact your "
+                "Azure administrator.",
             )

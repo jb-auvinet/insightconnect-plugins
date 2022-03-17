@@ -1,5 +1,6 @@
 import json
 from typing import Any, Dict, List, Tuple, Optional, Union
+import time
 import urllib.parse
 
 import requests
@@ -13,6 +14,8 @@ class AzureClient:
     def __init__(self, logger: Any, tenant_id: str, client_id: str, client_secret: str):
         self.O365_AUTH_ENDPOINT = "https://login.microsoftonline.com/{}/oauth2/token"
         self.SCOPE = "https://management.azure.com"
+        self.time_ago = 0  # Jan 1, 1970
+        self.time_now = time.time()  # More than 1 hour since 1978
         self._auth_token = ""  # nosec
         self.tenant_id = tenant_id
         self.client_id = client_id
@@ -24,6 +27,10 @@ class AzureClient:
         tenant_id = self.tenant_id
         client_id = self.client_id
         client_secret = self.client_secret
+
+        self.time_now = time.time()
+        if (self.time_now - self.time_ago) < 3500:  # 1 hour in seconds
+            return self._auth_token
 
         self.logger.info("Updating auth token...")
 
@@ -50,8 +57,9 @@ class AzureClient:
                 data=request.text,
             )
         token = request.json().get("access_token")
+        self.time_ago = time.time()
         self._auth_token = token
-        self.logger.info(f"Authentication Token: ****************{self._auth_token[-5:]}")
+        self.logger.info(f"Authentication Token: ****************{self.auth_token[-5:]}")
         return token
 
 
@@ -78,12 +86,12 @@ class AzureSentinelClient(AzureClient):
 
         try:
             data = json.dumps(payload) if payload else None
-            kwargs = {"headers": headers, "data": data}
             if params:
                 payload_str = urllib.parse.urlencode(params, safe="$")
-                kwargs["params"] = payload_str
-
-            response = requests.request(method, url, **kwargs)
+                self.logger.info(payload_str)
+            else:
+                payload_str = ""
+            response = requests.request(method, url, headers=headers, data=data, params=payload_str)
             response.raise_for_status()
             if response.headers.get("content-type") == "application/json; charset=utf-8":
                 return response.status_code, response.json()
@@ -94,12 +102,16 @@ class AzureSentinelClient(AzureClient):
         except requests.exceptions.HTTPError as error:
             if error.response.status_code == 400:
                 raise PluginException(
-                    cause="Combination of input arguments is incorrect", assistance=error.response.json().get("error")
+                    cause="Comibination of input arguments is incorrect", assistance=error.response.json().get("error")
                 )
             if error.response.status_code == 401:
                 raise PluginException(cause=error.response.json().get("error"))
             if error.response.status_code == 403:
-                raise PluginException(preset=PluginException.Preset.UNAUTHORIZED)
+                raise PluginException(
+                    cause="Unauthorized access",
+                    assistance="Check your Azure permissions, you might not be authorized"
+                    "to access data you are trying to reach.",
+                )
             if error.response.status_code == 404:
                 raise PluginException(preset=PluginException.Preset.NOT_FOUND)
             if error.response.status_code >= 500:
@@ -121,7 +133,9 @@ class AzureSentinelClient(AzureClient):
         """
         final_uri = uri
         filters = {f"${key}": filters[key] for key in filters}
-        _, objects = self._call_api(method, final_uri, self.headers, params=filters)
+        status_code, objects = self._call_api(method, final_uri, self.headers, params=filters)
+
+        self.logger.info(status_code)
         results = objects.get(type_, [])
         nextLink = objects.get("nextLink", None)
         while nextLink:

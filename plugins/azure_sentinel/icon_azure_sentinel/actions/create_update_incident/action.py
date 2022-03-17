@@ -1,5 +1,5 @@
 import insightconnect_plugin_runtime
-from icon_azure_sentinel.util.tools import return_non_empty, map_output
+from icon_azure_sentinel.util.tools import return_non_empty
 
 from .schema import Component, CreateUpdateIncidentInput, CreateUpdateIncidentOutput, Input
 
@@ -22,5 +22,4 @@ class CreateUpdateIncident(insightconnect_plugin_runtime.Action):
         data_dict = self.connection.api_client.create_incident(
             incident_id, resource_group_name, workspace_name, subscription_id, **params
         )
-        data_dict = map_output(data_dict)
         return return_non_empty(data_dict)

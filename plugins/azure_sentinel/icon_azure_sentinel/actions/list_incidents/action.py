@@ -1,7 +1,6 @@
 import insightconnect_plugin_runtime
 
 from .schema import Component, Input, ListIncidentsInput, ListIncidentsOutput, Output
-from icon_azure_sentinel.util.tools import map_output_for_list
 
 
 class ListIncidents(insightconnect_plugin_runtime.Action):
@@ -23,5 +22,4 @@ class ListIncidents(insightconnect_plugin_runtime.Action):
         incidents = self.connection.api_client.list_incident(
             resource_group_name, workspace_name, filters, subscription_id
         )
-        incidents = map_output_for_list(incidents)
         return {Output.INCIDENTS: incidents}

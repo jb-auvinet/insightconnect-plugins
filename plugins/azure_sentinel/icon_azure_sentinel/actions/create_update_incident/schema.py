@@ -4,10 +4,11 @@ import json
 
 
 class Component:
-    DESCRIPTION = "Creates a new incident or updates an existing incident"
+    DESCRIPTION = "This action creates or updates an incident"
 
 
 class Input:
+    ETAG = "etag"
     INCIDENTID = "incidentId"
     PROPERTIES = "properties"
     RESOURCEGROUPNAME = "resourceGroupName"
@@ -29,6 +30,12 @@ class CreateUpdateIncidentInput(insightconnect_plugin_runtime.Input):
   "type": "object",
   "title": "Variables",
   "properties": {
+    "etag": {
+      "type": "string",
+      "title": "Etag",
+      "description": "Etag of the azure resource",
+      "order": 5
+    },
     "incidentId": {
       "type": "string",
       "title": "Incident ID",
@@ -39,12 +46,12 @@ class CreateUpdateIncidentInput(insightconnect_plugin_runtime.Input):
       "$ref": "#/definitions/IncidentProperties",
       "title": "Properties",
       "description": "Incident properties object",
-      "order": 5
+      "order": 6
     },
     "resourceGroupName": {
       "type": "string",
       "title": "Resource Group Name",
-      "description": "The name of the resource group within the user's subscription",
+      "description": "The name of the resource group within the user's subscription. The name is case-insensitive",
       "order": 2
     },
     "subscriptionId": {
@@ -86,7 +93,7 @@ class CreateUpdateIncidentInput(insightconnect_plugin_runtime.Input):
         },
         "ManagedIdentity": {
           "type": "string",
-          "title": "Managed Indentity",
+          "title": "Managed Indetity",
           "description": "Managed identity",
           "order": 3
         },
@@ -362,7 +369,7 @@ class CreateUpdateIncidentInput(insightconnect_plugin_runtime.Input):
             },
             "ManagedIdentity": {
               "type": "string",
-              "title": "Managed Indentity",
+              "title": "Managed Indetity",
               "description": "Managed identity",
               "order": 3
             },
@@ -528,7 +535,7 @@ class CreateUpdateIncidentInput(insightconnect_plugin_runtime.Input):
                 },
                 "ManagedIdentity": {
                   "type": "string",
-                  "title": "Managed Indentity",
+                  "title": "Managed Indetity",
                   "description": "Managed identity",
                   "order": 3
                 },
@@ -608,7 +615,7 @@ class CreateUpdateIncidentInput(insightconnect_plugin_runtime.Input):
             },
             "ManagedIdentity": {
               "type": "string",
-              "title": "Managed Indentity",
+              "title": "Managed Indetity",
               "description": "Managed identity",
               "order": 3
             },
@@ -686,7 +693,7 @@ class CreateUpdateIncidentOutput(insightconnect_plugin_runtime.Output):
         },
         "ManagedIdentity": {
           "type": "string",
-          "title": "Managed Indentity",
+          "title": "Managed Indetity",
           "description": "Managed identity",
           "order": 3
         },
@@ -962,7 +969,7 @@ class CreateUpdateIncidentOutput(insightconnect_plugin_runtime.Output):
             },
             "ManagedIdentity": {
               "type": "string",
-              "title": "Managed Indentity",
+              "title": "Managed Indetity",
               "description": "Managed identity",
               "order": 3
             },
@@ -1128,7 +1135,7 @@ class CreateUpdateIncidentOutput(insightconnect_plugin_runtime.Output):
                 },
                 "ManagedIdentity": {
                   "type": "string",
-                  "title": "Managed Indentity",
+                  "title": "Managed Indetity",
                   "description": "Managed identity",
                   "order": 3
                 },
@@ -1208,7 +1215,7 @@ class CreateUpdateIncidentOutput(insightconnect_plugin_runtime.Output):
             },
             "ManagedIdentity": {
               "type": "string",
-              "title": "Managed Indentity",
+              "title": "Managed Indetity",
               "description": "Managed identity",
               "order": 3
             },
