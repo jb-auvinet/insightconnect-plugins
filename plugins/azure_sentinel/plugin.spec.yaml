@@ -1,0 +1,808 @@
+plugin_spec_version: v2
+extension: plugin
+products: [insightconnect]
+name: azure_sentinel
+title: Azure Sentinel Plugin
+vendor: rapid7
+support: community
+supported_versions: [2021-04-01]
+status: []
+description: Microsoft Azure Sentinel is a cloud-native SIEM that provides intelligent security analytics for your entire enterprise, powered by AI
+version: 1.0.0
+resources:
+  source_url: https://github.com/rapid7/insightconnect-plugins/tree/master/plugins/azure_sentinel
+  license_url: https://github.com/rapid7/insightconnect-plugins/blob/master/LICENSE
+  vendor_url: https://www.microsoft.com/
+tags:
+  - cloud
+  - Azure Sentinel
+  - VM
+  - Microsoft
+  - automation
+hub_tags:
+  use_cases: [threat_detection_and_response]
+  keywords: [azure, incidents, cloud, microsoft]
+  features: [create incident, delete incident, get incident, list incidents, list alerts, list bookmarks, list entities]
+types:
+  # Common types
+  CreatedByType:
+    # There is little information in the documentation on this type.
+    Application:
+      description: Application
+      title: Application
+      type: string
+    Key:
+      description: Description 
+      title: Key
+      type: string
+    ManagedIdentity:
+      description: Managed identity
+      title: Managed Indetity
+      type: string
+    User:
+      description: User
+      title: User 
+      type: string
+  SystemData:
+    createdAt:
+      description: The timestamp of resource creation (UTC)
+      title: Created At
+      type: date
+    createdBy:
+      description: The identity that created the resource
+      title: Created By
+      type: string
+    createdByType:
+      description: The type of identity that created the resource
+      title:  Created By Type
+      type: CreatedByType
+    lastModifiedAt:
+      description: The timestamp of resource last modification (UTC)
+      title: Last Modified At 
+      type: date
+    lastModifiedBy:
+      description: The identity that last modified the resource
+      title: Last Modified By
+      type: string
+    lastModifiedByType:
+      description: The type of identity that last modified the resource
+      title: Last Modified By Type
+      type: CreatedByType
+  UserInfo:
+    email:
+      description: The email of the user
+      title: Email
+      type: string
+    name:
+      description: The name of the user
+      title: Name 
+      type: string
+    objectId:
+      description: The object ID of the user
+      title: Object Identification 
+      type: string
+  # Entity Related Types
+  Entity:
+    id:
+      title: Azure resource ID
+      description: Azure resource ID
+      type: string
+    kind:
+      title: Kind
+      description: The kind of the entity
+      type: string
+    name:
+      title: Name
+      description: Azure resource name
+      type: string
+    properties:
+      title: Properties
+      description: Entity properties
+      type: object
+  # Bookmark types
+  HuntingBookmarkProperties:
+    additionalData:
+      description: Custom fields that should be part of the entity and will
+        be presented to the user
+      title: Additional Data
+      type: object
+    created:
+      description: The time the bookmark was created
+      title: Created
+      type: date
+    createdBy:
+      description: Describes a user that created the bookmark
+      title: Created By
+      type: UserInfo
+    displayName:
+      description: The display name of the bookmark
+      title: Display Name
+      type: string
+    eventTime:
+      description: The time of the event
+      title: Event Time 
+      type: date
+    friendlyName:
+      description: The graph item display name which is a short human-readable description
+        of the graph item instance
+      title: Friendly Name
+      type: string
+    incidentInfo:
+      description: Describes an incident that relates to bookmark
+      title: Incident Info
+      type: object
+    labels:
+      description: List of labels relevant to this bookmark
+      title: Labels
+      type: "[]string"
+    notes:
+      description: The notes of the bookmark
+      title: Notes
+      type: string
+    query:
+      description: The query of the bookmark
+      title: Query 
+      type: string
+    queryResult:
+      description: The query result of the bookmark
+      title: Query Result
+      type: string
+    updated:
+      description: The last time the bookmark was updated
+      title: Updated 
+      type: date
+    updatedBy:
+      description: Describes a user that updated the bookmark
+      title: Updated By
+      type: UserInfo
+  HuntingBookmark:
+    id:
+      description: Azure resource ID
+      title: ID
+      required: false
+      type: string
+    kind:
+      description: The kind of the entity
+      title: Kind
+      type: string
+      required: false
+    name:
+      description: Azure resource name
+      title: Name 
+      type: string
+      required: false
+    systemData:
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy information
+      title: System Data
+      type: SystemData
+      required: false
+    type:
+      description: Azure resource type
+      title: Type 
+      type: string
+      required: false
+    properties:
+      title: Properties
+      description: Hunting bookmark properties
+      type: HuntingBookmarkProperties
+      required: false
+  ConfidenceReasons:
+    reason:
+      title: Reason 
+      description: Reason's description
+      type: string
+    reasonType:
+      title: Reason Type
+      description: The reason's type (category)
+      type: string 
+  # Alert types
+  AlertProperties:
+    additionalData:
+      description: Custom fields that should be part of the entity and will
+        be presented to the user
+      title: Additional Data
+      type: object
+    alertDisplayName:
+      description: The display name of the alert
+      title: Alert Display Name
+      type: string
+    alertLink:
+      description: The URI link of the alert
+      title: Alert Link 
+      type: string
+    alertType:
+      description: The type name of the alert
+      title: Alert Type 
+      type: string
+    compromisedEntity:
+      description: Display name of the main entity being reported on
+      title: Compromised Entity 
+      type: string
+    confidenceLevel:
+      description: The confidence level of this alert
+      title: Confidence Level 
+      type: string
+    confidenceReasons:
+      description: The confidence reasons
+      title: Confidence Reasons
+      type: "[]ConfidenceReasons"
+    confidenceScore:
+      description: The confidence score of the alert
+      title: Confidence Score
+      type: integer 
+    confidenceScoreStatus:
+      description: The confidence score calculation status, i.e. indicating if score
+        calculation is pending for this alert, not applicable or final
+      title: Confidence Score Status
+      type: string
+      example: Final
+    description:
+      description: Alert description
+      title: Description
+      type: string
+    endTimeUtc:
+      description: The impact end time of the alert
+      title: End Time UTC
+      type: date
+    friendlyName:
+      description: The graph item display name which is a short humanly readable description
+        of the graph item instance
+      title: Friendly Display Name
+      type: string
+    intent:
+      description: Holds the alert intent stage(s) mapping for this alert
+      title: Intent
+      type: string
+      example: Collection
+    processingEndTime:
+      description: The time the alert was made available for consumption
+      title: Processing End Time
+      type: date
+    productComponentName:
+      description: The name of a component inside the product which generated the alert
+      title: Product Component Name 
+      type: string
+    productName:
+      description: The name of the product which published this alert
+      title: Product Name 
+      type: string
+    productVersion:
+      description: The version of the product generating the alert
+      title: Product Version
+      type: string
+    providerAlertId:
+      description: The identifier of the alert inside the product which generated the
+        alert
+      title: Provider Alert ID 
+      type: string
+    remediationSteps:
+      description: Manual action items to take to remediate the alert
+      title: Remediation Steps
+      type: "[]string"
+    resourceIdentifiers:
+      description: The list of resource identifiers of the alert
+      title: Resource Identifiers
+      type: "[]object"
+    severity:
+      description: The severity of the alert
+      title: Severity 
+      type: string
+      example: High 
+    startTimeUtc:
+      description: The impact start time of the alert (the time of the first event contributing
+        to the alert)
+      title: Start Time UTC 
+      type: date
+    status:
+      description: The lifecycle status of the alert
+      title: Status
+      type: string
+      example: New
+    systemAlertId:
+      description: Holds the product identifier of the alert for the product
+      title: System Alert ID
+      type: string
+    systemData:
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy
+        information
+      title: System Data 
+      type: SystemData
+    tactics:
+      description: The tactics of the alert
+      title: Tactics
+      type: "[]string"
+    timeGenerated:
+      description: The time the alert was generated
+      title: Title 
+      type: date
+    type:
+      description: Azure resource type
+      title: Title 
+      type: string
+    vendorName:
+      description: The name of the vendor that raised the alert
+      title: Vendor Name
+      type: string
+  Alert:
+    properties:
+      title: Properties
+      description: Alert's properties
+      type: AlertProperties
+  # Incident Types
+  IncidentOwnerInfo:
+    assignedTo:
+      description: The name of the user the incident is assigned to
+      title: Assigned To
+      type: string
+    email:
+      description: The mail of the user the incident is assigned to
+      title: Email
+      type: string
+    objectId:
+      description: The object id of the user the incident is assigned to
+      title: Object ID
+      type: string
+    userPrincipalName:
+      description: The user principal name of the user the incident is assigned to
+      title: User Principal Name
+      type: string
+  IncidentLabel:
+    labelName:
+      title: Label Name 
+      description: The name of the label
+      type: string
+    labelType:
+      title: The type of label
+      description: Label Type 
+      type: string
+      example: System
+  IncidentAdditionalData:
+    alertProductNames:
+      description: List of product names of alerts in the incident
+      title: Alert Product Names 
+      type: "[]string"
+    alertsCount:
+      description: The number of alerts in the incident
+      title: Alert's Count 
+      type: integer
+    bookmarksCount:
+      description: The number of bookmarks in the incident
+      title: Bookmarks Count 
+      type: integer
+    commentsCount:
+      description: The number of comments in the incident
+      title: Comments Count 
+      type: integer
+    tactics:
+      description: The tactics associated with incident
+      title: Tactics 
+      type: "[]string"
+  IncidentProperties:
+    additionalData:
+      description: Additional data on the incident
+      title: Additional Data 
+      type: IncidentAdditionalData
+    classification:
+      description: The reason the incident was closed
+      title: Classification 
+      type: string
+      example: BenignPositive
+    classificationComment:
+      description: Describes the reason the incident was closed
+      title: Classification Comment
+      type: string
+    classificationReason:
+      description: The classification reason the incident was closed with
+      title: Classification Reason
+      type: string
+      example: InaccurateData 
+    createdTimeUtc:
+      description: The time the incident was created
+      title: Created Time UTC
+      type: date
+    description:
+      description: The description of the incident
+      title: Description 
+      type: string
+    etag:
+      description: Etag of the azure resource
+      title: Etag
+      type: string
+    firstActivityTimeUtc:
+      description: The time of the first activity in the incident
+      title: First Activity Time UTC 
+      type: date
+    id:
+      description: Azure resource ID
+      title: ID
+      type: string
+    incidentNumber:
+      description: A sequential number
+      title: Incident Number 
+      type: integer
+    incidentUrl:
+      description: The deep-link URL to the incident in Azure portal
+      title: Incident URL 
+      type: string
+    labels:
+      description: List of labels relevant to this incident
+      title: Labels
+      type: "[]IncidentLabel"
+    lastActivityTimeUtc:
+      description: The time of the last activity in the incident
+      title: Last Activity Time UTC 
+      type: date
+    lastModifiedTimeUtc:
+      description: The last time the incident was updated
+      title: Last Modified Time UTC 
+      type: date
+    name:
+      description: Azure resource name
+      title: Name 
+      type: string
+    owner:
+      description: Describes a user that the incident is assigned to
+      title: Owner 
+      type: IncidentOwnerInfo
+    relatedAnalyticRuleIds:
+      description: List of resource ids of Analytic rules related to the incident
+      title: Related Analytic Rule IDs 
+      type: "[]string"
+    severity:
+      title: Severity
+      description: Incidents severity
+      required: true
+      type: string
+      example: High
+    status:
+      title: Status 
+      description: Incidents status
+      required: true
+      type: string
+      example: Active
+    systemData:
+      description: Azure Resource Manager metadata containing createdBy and modifiedBy
+        information
+      title: System Data
+      type: SystemData
+    title:
+      description: The title of the incident
+      title: The title of the incident
+      type: string
+    type:
+      description: Azure resource type
+      title: Type
+      type: string
+  Incident:
+      id:
+        title: ID 
+        description: Full incident ID
+        type: string
+      name:
+        title: Name 
+        description: Incident name - short ID
+        type: string
+      type:
+        title: Type
+        description: Incident type
+        type: string
+      etag:
+        title: Etag
+        description: Etag
+        type: string
+      properties:
+        title: Incident Properties
+        description: Incident properties object
+        type: IncidentProperties
+connection:
+  client_id:
+    title: Client ID
+    type: string
+    description: The application ID that the application registration portal assigned
+      to your app
+    required: true
+    example: c163eff0-d1a1-4618-ee2a-453534f43cee
+  client_secret:
+    title: Client Secret
+    type: credential_secret_key
+    description: The application secret that you generated for your app in the app
+      registration portal
+    required: true
+    example: ef50c6bx9umaik9agvoxtoqec2fg9f0y
+  tenant_id:
+    title: Tenant ID
+    type: string
+    description: This is active directory ID
+    required: true
+    example: 5ceea899-ae8c-4ff1-fffe-353646eeeff0
+actions:
+  create_update_incident:
+    title: Create or Update Incident
+    description: This action creates or updates an incident 
+    input:
+      incidentId:
+        title: Incident ID
+        required: true
+        description: Incident ID
+        type: string
+        example: incident-14071867
+      resourceGroupName:
+        title: Resource Group Name
+        required: true
+        description: The name of the resource group within the user's subscription. The name is case-insensitive
+        type: string
+        example: resourcegrup1
+      subscriptionId:
+        title: Subscription ID
+        required: true
+        description: Azure subscription ID
+        type: string
+        example: aaaef455-a780-44ca-9e51-aaafffeeea3a
+      workspaceName:
+        title: Workspace Name
+        required: true
+        description: The name of the workspace
+        type: string
+        example: workspace23
+      etag:
+        title: Etag
+        description: Etag of the azure resource
+        required: false
+        type: string
+        example: 0300bf09-0000-0000-0000-5c37296e0000
+      properties:
+        title: Properties
+        description: Incident properties object
+        required: true
+        type: IncidentProperties
+        example: {"status": "Closed"}
+    output:
+      id:
+        title: Full Incident ID
+        description: Full incident ID
+        type: string
+        required: false
+      name:
+        title: Name
+        description: Incident name - short ID
+        type: string
+        required: false
+      type:
+        title: Type
+        description: Type
+        type: string
+        required: false
+      etag:
+        title: Etag
+        type: string
+        description: Etag
+        required: false
+      properties:
+        title: Properties 
+        description: Incident properties object
+        type: IncidentProperties
+        required: false
+  list_incidents:
+    title: List Incidents 
+    description: List all the incidents matching specified criteria 
+    input:
+      resourceGroupName:
+        title: Resource Group Name
+        required: true
+        description: The name of the resource group within the user's subscription. The name is case-insensitive
+        type: string
+        example: resourcegrup1
+      subscriptionId:
+        title: Subscription ID
+        required: true
+        description: Azure subscription ID 
+        type: string
+        example: 0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe
+      workspaceName:
+        title: Workspace Name
+        required: true
+        description: The name of the workspace
+        type: string
+        example: workspace23
+      orderBy:
+        title: Order By
+        required: false
+        description: Field to sort results by 
+        type: string
+        example: "properties/createdTimeUtc desc"
+    output:
+      incidents:
+        title: Incidents
+        description: List of incidents objects 
+        type: "[]Incident"
+        required: false
+  get_incident:
+    title: Get Incident
+    description: Get a specific incident from a given workspace and resource group
+    input:
+      incidentId:
+        title: Incident ID
+        required: true
+        description: Incident ID
+        type: string
+        example: incident123
+      resourceGroupName:
+        title: Resource Group Name
+        required: true
+        description: The name of the resource group within the user's subscription. The name is case-insensitive
+        type: string
+        example: resourcegrup1
+      subscriptionId:
+        title: Subscription ID
+        required: true
+        description: Azure subscription ID 
+        type: string
+        example: 0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe
+      workspaceName:
+        title: Workspace Name
+        required: true
+        description: The name of the workspace
+        type: string
+        example: workspace23
+    output:
+      id:
+        title: Full Incident ID
+        description: Full incident ID
+        required: false
+        type: string
+      name:
+        title: Incident ID
+        description: Incident name - short ID
+        required: false
+        type: string
+      type:
+        title: Type
+        description: Type of the incident
+        required: false
+        type: string
+      etag:
+        title: Etag
+        description: Etag of the incident
+        required: false
+        type: string
+      properties:
+        title: Properties
+        description: Incident properties object
+        required: false
+        type: IncidentProperties
+  delete_incident:
+    title: Delete Incident
+    description: Delete an incident
+    input:
+      incidentId:
+        title: Incident ID
+        required: true
+        description: Incident ID
+        type: string
+        example: incident123
+      resourceGroupName:
+        title: Resource Group Name
+        required: true
+        description: The name of the resource group within the user's subscription. The name is case-insensitive
+        type: string
+        example: resourcegrup1
+      subscriptionId:
+        title: Subscription ID
+        required: true
+        description: Azure subscription ID 
+        type: string
+        example: 0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe
+      workspaceName:
+        title: Workspace Name
+        required: true
+        description: The name of the workspace
+        type: string
+        example: workspace23
+    output:
+      status:
+        title: Deletion Status
+        description: Deletion status, 200 - ok, 204 - no content
+        type: integer
+        required: false
+  list_alerts:
+    title: List Alerts
+    description: Get all incidents alerts
+    input:
+      incidentId:
+        title: Incident ID
+        required: true
+        description: Incident ID
+        type: string
+        example: incident123
+      resourceGroupName:
+        title: Resource Group Name
+        required: true
+        description: The name of the resource group within the user's subscription. The name is case-insensitive
+        type: string
+        example: resourcegrup1
+      subscriptionId:
+        title: Subscription ID
+        required: true
+        description: Azure subscription ID
+        type: string
+        example: 0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe
+      workspaceName:
+        title: Workspace Name
+        required: true
+        description: The name of the workspace
+        type: string
+        example: workspacename12
+    output:
+      alerts:
+        title: Alerts
+        description: All the alerts assigned to the given incident
+        type: "[]Alert"
+        required: false
+  list_bookmarks:
+    title: List Bookmarks
+    description: Get all incidents bookmarks
+    input:
+      incidentId:
+        title: Incident ID
+        required: true
+        description: Incident ID
+        type: string
+        example: incident123
+      resourceGroupName:
+        title: Resource Group Name
+        required: true
+        description: The name of the resource group within the user's subscription
+        type: string
+        example: resourcegroup12
+      subscriptionId:
+        title: Subscription ID
+        required: true
+        description: Azure subscription ID
+        type: string
+        example: 0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe
+      workspaceName:
+        title: Workspace Name
+        required: true
+        description: The name of the workspace
+        type: string
+        example: workspace23
+    output:
+      bookmarks:
+        title: Bookmark List
+        description: All the bookmarks assigned to the given incident
+        type: "[]HuntingBookmark"
+        required: false
+  list_entities:
+    title: List Entities
+    description: Get all incidents entities
+    input:
+      incidentId:
+        title: Incident ID
+        required: true
+        description: Incident ID
+        type: string
+        example: incident123
+      resourceGroupName:
+        title: Resource Group Name
+        required: true
+        description: The name of the resource group within the user's subscription
+        type: string
+        example: resourcegrup12
+      subscriptionId:
+        title: Subscription ID
+        required: true
+        description: Azure subscription ID
+        type: string
+        example: 0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe
+      workspaceName:
+        title: Workspace Name
+        required: true
+        description: The name of the workspace
+        type: string
+        example: workspace23
+    output:
+      entities:
+        title: Entities
+        description: All the entities assigned to the given incident
+        type: "[]Entity"
+        required: false
