@@ -1,19 +1,47 @@
 {
-	"spec": "2b365d4851e00e6b4a76d9e778966ade",
-	"manifest": "484bf4424ae48b5bdfb4833c3ec39ff2",
-	"setup": "5456f851cb1b0069d3a8c46fe79fe0fb",
+	"spec": "d1763d6aa2a3c9d702cdab679f0ff12e",
+	"manifest": "57dd73fbc3c30e783f0c9d2acd507913",
+	"setup": "ac699adfc8d79aeef99c72d70a4560b6",
 	"schemas": [
+		{
+			"identifier": "append_tags/schema.py",
+			"hash": "970578dff23d82b552ce67b6dc2e15c0"
+		},
+		{
+			"identifier": "create_indicator/schema.py",
+			"hash": "5d7c50b4689e4207e097a477d131c501"
+		},
+		{
+			"identifier": "create_update_comment/schema.py",
+			"hash": "65a82e1199b5ea8e3b73b6e1e17928ea"
+		},
 		{
 			"identifier": "create_update_incident/schema.py",
 			"hash": "0262975808affeb781427895cbf61d7b"
+		},
+		{
+			"identifier": "delete_comment/schema.py",
+			"hash": "88792508d72442af971d56020124c814"
 		},
 		{
 			"identifier": "delete_incident/schema.py",
 			"hash": "b418e0dfee907e3c0ca1963ca6af1dac"
 		},
 		{
+			"identifier": "delete_indicator/schema.py",
+			"hash": "04d174f293c3ca26a6a016a96c9c24cc"
+		},
+		{
+			"identifier": "get_comment/schema.py",
+			"hash": "dc90116b53c85277b125339c42065c3a"
+		},
+		{
 			"identifier": "get_incident/schema.py",
 			"hash": "6b47e16cbb1c69af93d4f28146d0c120"
+		},
+		{
+			"identifier": "get_indicator/schema.py",
+			"hash": "dd5d981b29fe62a6a69126a333696d68"
 		},
 		{
 			"identifier": "list_alerts/schema.py",
@@ -24,12 +52,28 @@
 			"hash": "163352f366c22a3f3929bd0987cb4c20"
 		},
 		{
+			"identifier": "list_comments/schema.py",
+			"hash": "a3ce71e8ffe22cfc16557cd8f9b03293"
+		},
+		{
 			"identifier": "list_entities/schema.py",
 			"hash": "4a24673b6d6e355a41d9f9a545834dd4"
 		},
 		{
 			"identifier": "list_incidents/schema.py",
 			"hash": "173d523772e00ec255513d08e93ed7a1"
+		},
+		{
+			"identifier": "query_indicator/schema.py",
+			"hash": "e74b049def7acbeab6e14f4644620ca2"
+		},
+		{
+			"identifier": "replace_tags/schema.py",
+			"hash": "d71ab962502cc5876da3a39aab97141e"
+		},
+		{
+			"identifier": "update_indicator/schema.py",
+			"hash": "db483a64c961b6325daf39786f155050"
 		},
 		{
 			"identifier": "connection/schema.py",

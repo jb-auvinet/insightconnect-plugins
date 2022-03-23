@@ -50,6 +50,301 @@ Example input:
 
 ### Actions
 
+#### Update Indicator
+
+This action is used to update existing threat intelligence indicator.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|name|string|None|True|Threat intelligence indicator name field|None|4bb36b7b-26ff-4d1c-9cbe-0d8ab3da0014|
+|properties|ThreatIntelligenceIndicatorPropertiesUpdate|None|True|Object containing all the necessary properties to conclude a query|None|None|
+|resourceGroupName|string|None|True|The name of the resource group within the user's subscription|None|resourcegrup12|
+|subscriptionId|string|None|True|Azure subscription ID|None|0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe|
+|workspaceName|string|None|True|The name of the workspace|None|workspace23|
+
+Example input:
+
+```
+{
+  "name": "4bb36b7b-26ff-4d1c-9cbe-0d8ab3da0014",
+  "resourceGroupName": "resourcegrup12",
+  "subscriptionId": "0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe",
+  "workspaceName": "workspace23"
+}
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|etag|string|True|Etag of the azure resource|
+|id|string|True|Identifier created indicator|
+|kind|string|True|The kind of the entity|
+|name|string|True|Name of the entity|
+|properties|ThreatIntelligenceIndicatorProperties|True|Object containing all the necessary properties to conclude a query|
+|type|string|True|Type of the entity|
+
+Example output:
+
+```
+```
+
+#### Replace Tags
+
+This action is used to replace tags to a threat intelligence indicator.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|name|string|None|True|Threat intelligence indicator name field|None|4bb36b7b-26ff-4d1c-9cbe-0d8ab3da0014|
+|properties|ThreatIntelligenceIndicatorPropertiesReplaceTags|None|True|Object containing all the necessary properties to conclude a query|None|None|
+|resourceGroupName|string|None|True|The name of the resource group within the user's subscription|None|resourcegrup12|
+|subscriptionId|string|None|True|Azure subscription ID|None|0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe|
+|workspaceName|string|None|True|The name of the workspace|None|workspace23|
+
+Example input:
+
+```
+{
+  "name": "4bb36b7b-26ff-4d1c-9cbe-0d8ab3da0014",
+  "resourceGroupName": "resourcegrup12",
+  "subscriptionId": "0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe",
+  "workspaceName": "workspace23"
+}
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|etag|string|True|Etag of the azure resource|
+|id|string|True|Identifier created indicator|
+|kind|string|True|The kind of the entity|
+|name|string|True|Name of the entity|
+|properties|ThreatIntelligenceIndicatorProperties|True|Object containing all the necessary properties to conclude a query|
+|type|string|True|Type of the entity|
+
+Example output:
+
+```
+```
+
+#### Query Threat Indicator
+
+This action is used to query threat intelligence indicators as per filtering criteria.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|includeDisabled|boolean|None|False|Parameter to include/exclude disabled indicators|None|True|
+|keywords|string|None|False|Keywords for searching threat intelligence indicators|None|new schema|
+|maxConfidence|integer|None|False|Filter by maximum confidence|None|75|
+|maxValidUntil|date|None|False|End time for ValidUntil filter|None|None|
+|minConfidence|integer|None|False|Filter by minimum confidence|None|0|
+|minValidUntil|date|None|False|Start time for ValidUntil filter|None|None|
+|names|[]string|None|False|Names of threat intelligence indicators|None|['4bb36b7b-26ff-4d1c-9cbe-0d8ab3da0014']|
+|pageSize|integer|None|False|The number of items on the page|None|100|
+|patternTypes|[]string|None|False|Filter by pattern types|None|url|
+|resourceGroupName|string|None|True|The name of the resource group within the user's subscription|None|resourcegrup12|
+|skipToken|string|None|False|Filter by skip token|None|None|
+|sortBy|[]ThreatIntelligenceSortingCriteria|None|False|Columns to sort by and sorting order|None|None|
+|sources|[]string|None|False|Sources of threat intelligence indicators|None|['Azure Sentinel']|
+|subscriptionId|string|None|True|Azure subscription ID|None|0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe|
+|threatTypes|[]string|None|False|Threat Types of Threat Inteligence Indicators|None|['compromised']|
+|workspaceName|string|None|True|The name of the workspace|None|workspace23|
+
+Example input:
+
+```
+{
+  "includeDisabled": true,
+  "keywords": "new schema",
+  "maxConfidence": 75,
+  "minConfidence": 0,
+  "names": "['4bb36b7b-26ff-4d1c-9cbe-0d8ab3da0014']",
+  "pageSize": 100,
+  "patternTypes": "url",
+  "resourceGroupName": "resourcegrup12",
+  "sources": "['Azure Sentinel']",
+  "subscriptionId": "0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe",
+  "threatTypes": "['compromised']",
+  "workspaceName": "workspace23"
+}
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|indicators|[]ThreatIntelligenceIndicators|True|Filtred threat intelligence indicators.|
+
+Example output:
+
+```
+```
+
+#### Get Indicator
+
+This action is used to get existing threat intelligence indicator.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|name|string|None|True|Threat intelligence indicator name field|None|4bb36b7b-26ff-4d1c-9cbe-0d8ab3da0014|
+|resourceGroupName|string|None|True|The name of the resource group within the user's subscription|None|resourcegrup12|
+|subscriptionId|string|None|True|Azure subscription ID|None|0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe|
+|workspaceName|string|None|True|The name of the workspace|None|workspace23|
+
+Example input:
+
+```
+{
+  "name": "4bb36b7b-26ff-4d1c-9cbe-0d8ab3da0014",
+  "resourceGroupName": "resourcegrup12",
+  "subscriptionId": "0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe",
+  "workspaceName": "workspace23"
+}
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|etag|string|True|Etag of the azure resource|
+|id|string|True|Identifier created indicator|
+|kind|string|True|The kind of the entity|
+|name|string|True|Name of the entity|
+|properties|ThreatIntelligenceIndicatorProperties|True|Object containing all the necessary properties to conclude a query|
+|type|string|True|Type of the entity|
+
+Example output:
+
+```
+```
+
+#### Delete Indicator
+
+This action is used to delete existing threat intelligence indicator.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|name|string|None|True|Threat intelligence indicator name field|None|4bb36b7b-26ff-4d1c-9cbe-0d8ab3da0014|
+|resourceGroupName|string|None|True|The name of the resource group within the user's subscription|None|resourcegrup12|
+|subscriptionId|string|None|True|Azure subscription ID|None|0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe|
+|workspaceName|string|None|True|The name of the workspace|None|workspace23|
+
+Example input:
+
+```
+{
+  "name": "4bb36b7b-26ff-4d1c-9cbe-0d8ab3da0014",
+  "resourceGroupName": "resourcegrup12",
+  "subscriptionId": "0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe",
+  "workspaceName": "workspace23"
+}
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|message|string|True|Response message|
+
+Example output:
+
+```
+```
+
+#### Create Indicator
+
+This action is used to create a new threat intelligence indicator.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|kind|string|None|True|The kind of the entity|None|indicator|
+|properties|ThreatIntelligenceIndicatorProperties|None|True|Object containing all the necessary properties to conclude a query|None|None|
+|resourceGroupName|string|None|True|The name of the resource group within the user's subscription|None|resourcegrup12|
+|subscriptionId|string|None|True|Azure subscription ID|None|0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe|
+|workspaceName|string|None|True|The name of the workspace|None|workspace23|
+
+Example input:
+
+```
+{
+  "kind": "indicator",
+  "resourceGroupName": "resourcegrup12",
+  "subscriptionId": "0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe",
+  "workspaceName": "workspace23"
+}
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|etag|string|True|Etag of the azure resource|
+|id|string|True|Identifier created indicator|
+|kind|string|True|The kind of the entity|
+|name|string|True|Name of the entity|
+|properties|ThreatIntelligenceIndicatorProperties|True|Object containing all the necessary properties to conclude a query|
+|type|string|True|Type of the entity|
+
+Example output:
+
+```
+```
+
+#### Append Tags
+
+This action is used to append tags to a threat intelligence indicator.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|name|string|None|True|Threat intelligence indicator name field|None|4bb36b7b-26ff-4d1c-9cbe-0d8ab3da0014|
+|resourceGroupName|string|None|True|The name of the resource group within the user's subscription|None|resourcegrup12|
+|subscriptionId|string|None|True|Azure subscription ID|None|0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe|
+|threatIntelligenceTags|[]string|None|True|Array of tags to be appended to the threat intelligence indicator|None|['tag1', 'tag2']|
+|workspaceName|string|None|True|The name of the workspace|None|workspace23|
+
+Example input:
+
+```
+{
+  "name": "4bb36b7b-26ff-4d1c-9cbe-0d8ab3da0014",
+  "resourceGroupName": "resourcegrup12",
+  "subscriptionId": "0caafeeb-aaa0-44ca-ffe1-aaaaeeeffffe",
+  "threatIntelligenceTags": "['tag1', 'tag2']",
+  "workspaceName": "workspace23"
+}
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|etag|string|True|Etag of the azure resource|
+|id|string|True|Identifier created indicator|
+|kind|string|True|The kind of the entity|
+|name|string|True|Name of the entity|
+|properties|ThreatIntelligenceIndicatorProperties|True|Object containing all the necessary properties to conclude a query|
+|type|string|True|Type of the entity|
+
+Example output:
+
+```
+```
+
 #### Delete Comment
 
 This action deletes a comment for a given incident.
