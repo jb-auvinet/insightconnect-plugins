@@ -17,6 +17,7 @@ import logging
 from icon_microsoft_log_analytics.util.tools import Message
 from unit_test.mock import (
     mock_request_201_invalid_json,
+    mock_request_400,
     mock_request_403,
     mock_request_409,
     mock_request_429,
@@ -24,7 +25,6 @@ from unit_test.mock import (
     mock_request_503,
     mocked_request,
     STUB_CONNECTION,
-    mock_request_400,
 )
 
 STUB_EXAMPLE_FUNCTION_RESPONSE = {

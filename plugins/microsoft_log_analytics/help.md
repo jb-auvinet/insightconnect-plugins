@@ -6,6 +6,10 @@ Edit, run log queries with data in Azure Monitor Logs
 
 * Send Log Data
 * Get Log Data
+* Create or Update Saved Search
+* Get Saved Search
+* Delete Saved Search
+* List All Saved Searches
 * Search Trigger
 
 # Requirements
@@ -42,6 +46,209 @@ Example input:
 
 ### Actions
 
+#### Create or Update Saved Search
+
+This action creates or updates a saved search for a given workspace.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|properties|properties|None|True|Saved search properties object|None|{"properties":{"category":"Saved Search Test Category","displayName":"Create or Update Saved Search Test","functionAlias":"heartbeat_func","functionParameters":"a:int=1","query":"Heartbeat | summarize Count() by Computer | take a","tags":[{"name":"Group","value":"Computer"}]}}|
+|resource_group_name|string|None|True|Name of the resource group|None|ExampleResourceGroupName|
+|saved_search_name|string|None|True|Name of the saved search (case sensitive)|None|ExampleSavedSearchName|
+|subscription_id|string|None|True|Current subscription identifier that Azure application portal assigned to|None|5cdad72f-c848-4df0-8aaa-ffe033e75d57|
+|workspace_name|string|None|True|Customer's workspace name that the application registration portal is assigned|None|ExampleWorkspaceName|
+
+Example input:
+
+```
+{
+  "properties": "{\"properties\":{\"category\":\"Saved Search Test Category\",\"displayName\":\"Create or Update Saved Search Test\",\"functionAlias\":\"heartbeat_func\",\"functionParameters\":\"a:int=1\",\"query\":\"Heartbeat | summarize Count() by Computer | take a\",\"tags\":[{\"name\":\"Group\",\"value\":\"Computer\"}]}}",
+  "resource_group_name": "ExampleResourceGroupName",
+  "saved_search_name": "ExampleSavedSearchName",
+  "subscription_id": "5cdad72f-c848-4df0-8aaa-ffe033e75d57",
+  "workspace_name": "ExampleWorkspaceName"
+}
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|id|string|True|Fully qualified resource ID for the resource|
+|name|string|True|Saved search name|
+|properties|properties|True|Saved search properties object|
+
+Example output:
+
+```
+```
+
+#### Delete Saved Search by Name
+
+This action deletes the specified saved search in a given workspace.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|resource_group_name|string|None|True|Name of the resource group|None|ExampleResourceGroupName|
+|saved_search_name|string|None|True|Name of the saved search (case sensitive)|None|ExampleSavedSearchName|
+|subscription_id|string|None|True|Current subscription identifier that Azure application portal assigned to|None|5cdad72f-c848-4df0-8aaa-ffe033e75d57|
+|workspace_name|string|None|True|Customer's workspace name that the application registration portal is assigned|None|ExampleWorkspaceName|
+
+Example input:
+
+```
+{
+  "resource_group_name": "ExampleResourceGroupName",
+  "saved_search_name": "ExampleSavedSearchName",
+  "subscription_id": "5cdad72f-c848-4df0-8aaa-ffe033e75d57",
+  "workspace_name": "ExampleWorkspaceName"
+}
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|deleted_saved_search|saved_search|True|Data of deleted saved search|
+|message|string|True|Text message indicates that log data has been added to workspace|
+
+Example output:
+
+```
+{
+  "message": "Saved search ExampleSavedSearchName has been deleted",
+  "deleted_saved_search": {
+    "id": "subscriptions/00000000-0000-0000-0000-000000000005/resourceGroups/mms-eus/providers/Microsoft.OperationalInsights/workspaces/AtlantisDemo/savedSearches/ExampleSavedSearchName",
+    "name": "ExampleSavedSearchName",
+    "properties": {
+      "category": " Saved Search Test Category",
+      "displayName": "Delete Saved Search Example",
+      "query": "* | where TimeGenerated > ago(1h)"
+    }
+  }
+}
+```
+
+#### Get Saved Search
+
+This action gets the saved searche from Log Analytics by it's name.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|resource_group_name|string|None|True|Name of the resource group|None|ExampleResourceGroupName|
+|saved_search_name|string|None|True|Name of the saved search (case sensitive)|None|ExampleSavedSearchName|
+|subscription_id|string|None|True|Current subscription identifier that Azure application portal assigned to|None|5cdad72f-c848-4df0-8aaa-ffe033e75d57|
+|workspace_name|string|None|True|Customer's workspace name that the application registration portal is assigned|None|ExampleWorkspaceName|
+
+Example input:
+
+```
+{
+  "resource_group_name": "ExampleResourceGroupName",
+  "saved_search_name": "ExampleSavedSearchName",
+  "subscription_id": "5cdad72f-c848-4df0-8aaa-ffe033e75d57",
+  "workspace_name": "ExampleWorkspaceName"
+}
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|id|string|True|Fully qualified resource ID for the resource|
+|name|string|True|Saved search name|
+|properties|properties|True|Saved search properties object|
+
+Example output:
+
+```
+{
+  "id": "subscriptions/00000000-0000-0000-0000-000000000005/resourceGroups/mms-eus/providers/Microsoft.OperationalInsights/workspaces/AtlantisDemo/savedSearches/ExampleSavedSearchName",
+  "name": "ExampleSavedSearchName",
+  "properties": {
+    "category": " Saved Search Test Category",
+    "displayName": "Get Saved Search Example",
+    "query": "* | where TimeGenerated > ago(1h)"
+  }
+}
+```
+
+#### List All Searches
+
+This action gets the saved searches for a given Log Analytics workspace.
+
+##### Input
+
+|Name|Type|Default|Required|Description|Enum|Example|
+|----|----|-------|--------|-----------|----|-------|
+|resource_group_name|string|None|True|Name of the resource group|None|ExampleResourceGroupName|
+|subscription_id|string|None|True|Current subscription identifier that Azure application portal assigned to|None|5cdad72f-c848-4df0-8aaa-ffe033e75d57|
+|workspace_name|string|None|True|Customer's workspace name that the application registration portal is assigned|None|ExampleWorkspaceName|
+
+Example input:
+
+```
+{
+  "resource_group_name": "ExampleResourceGroupName",
+  "subscription_id": "5cdad72f-c848-4df0-8aaa-ffe033e75d57",
+  "workspace_name": "ExampleWorkspaceName"
+}
+```
+
+##### Output
+
+|Name|Type|Required|Description|
+|----|----|--------|-----------|
+|saved_searches|[]saved_search|True|List of found saved searches results|
+
+Example output:
+
+```
+{
+  "saved_searches": [
+    {
+      "id": "subscriptions/00000000-0000-0000-0000-000000000005/resourceGroups/mms-eus/providers/Microsoft.OperationalInsights/workspaces/AtlantisDemo/savedSearches/test-new-saved-search-id-2015",
+      "name": "test-new-saved-search-id-2015",
+      "properties": {
+        "category": " Saved Search Test Category",
+        "displayName": "Create or Update Saved Search Test",
+        "query": "* | measure Count() by Computer",
+        "tags": [
+          {
+            "name": "Group",
+            "value": "Computer"
+          }
+        ]
+      }
+    },
+    {
+      "id": "subscriptions/00000000-0000-0000-0000-000000000005/resourceGroups/mms-eus/providers/Microsoft.OperationalInsights/workspaces/AtlantisDemo/savedSearches/test-new-saved-search-id-2016",
+      "name": "test-new-saved-search-id-2016",
+      "properties": {
+        "category": " Saved Search Test 2",
+        "displayName": "Simple Test",
+        "query": "TimeGenerated"
+      }
+    },
+    {
+      "id": "subscriptions/00000000-0000-0000-0000-000000000005/resourceGroups/mms-eus/providers/Microsoft.OperationalInsights/workspaces/AtlantisDemo/savedSearches/test-new-saved-search-id-2017",
+      "name": "test-new-saved-search-id-2017",
+      "properties": {
+        "category": " Saved Search Test 2",
+        "displayName": "Simple Test",
+        "query": "TimeGenerated"
+      }
+    }
+  ]
+}
+```
+
 #### Get Log Data
 
 This action retrieves log data from Log Analytics workspace in Azure Monitor by a specific query.
@@ -59,7 +266,7 @@ Example input:
 
 ```
 {
-  "query": "AzureActivity | summarize count() by Category",
+  "query": "AzureActivity I summarize count() by Category",
   "resource_group_name": "ExampleResourceGroupName",
   "subscription_id": "5cdad72f-c848-4df0-8aaa-ffe033e75d57",
   "workspace_name": "ExampleWorkspaceName"
@@ -201,7 +408,7 @@ Example input:
 ```
 {
   "interval": 60,
-  "query": "AzureActivity | summarize count() by Category",
+  "query": "AzureActivity I summarize count() by Category",
   "resource_group_name": "ExampleResourceGroupName",
   "subscription_id": "5cdad72f-c848-4df0-8aaa-ffe033e75d57",
   "workspace_name": "ExampleWorkspaceName"
@@ -278,6 +485,7 @@ _This plugin does not contain any troubleshooting information._
 
 # Version History
 
+* 1.2.0 - Added new actions (Actions: Create or Update Saved Search, Get Saved Search, Delete Saved Search, List All Saved Searches)
 * 1.1.0 - Search trigger thats run Log Analytics query every interval time
 * 1.0.0 - Initial plugin (Actions: Get Log Data, Send Log Data)
 
