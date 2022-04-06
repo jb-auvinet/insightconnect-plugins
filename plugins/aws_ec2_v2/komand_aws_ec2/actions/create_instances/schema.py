@@ -17,9 +17,7 @@ class Input:
 
 class Output:
     RESERVATIONS = "reservations"
-    RESPONSE_METADATA = "response_metadata"
-    
-
+    RESPONSE_METADATA = "response_metadata" 
 
 class CreateInstancesInput(komand.Input):
     schema = json.loads("""

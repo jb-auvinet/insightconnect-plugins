@@ -1,7 +1,7 @@
 plugin_spec_version: v2
 extension: plugin
 products: ["insightconnect"]
-name: aws_ec2_jb
+name: aws_ec2_v2
 title: AWS EC2 JB
 vendor: jba
 support: jba
