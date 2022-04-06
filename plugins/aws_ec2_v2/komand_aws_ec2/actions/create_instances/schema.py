@@ -8,15 +8,18 @@ class Component:
 
 
 class Input:
-    DRY_RUN = "dry_run"
-    FILTERS = "filters"
-    INSTANCE_IDS = "instance_ids"
-    
+    IMAGE_ID = "image-id"
+    INSTANCE_TYPE = "instance-type"
+    SECURITY_GROUP_IDS = "security-group-ids"
+    KEY_NAME = "key-name"
+    TAG_SPECIFICATIONS = "tag-specifications"
+
 
 class Output:
     RESERVATIONS = "reservations"
     RESPONSE_METADATA = "response_metadata"
     
+
 
 class CreateInstancesInput(komand.Input):
     schema = json.loads("""
@@ -24,30 +27,42 @@ class CreateInstancesInput(komand.Input):
   "type": "object",
   "title": "Variables",
   "properties": {
-    "dry_run": {
-      "type": "boolean",
-      "title": "Dry Run",
-      "description": "Checks whether you have the required permissions for the action, without actually making the request, and provides an error response",
+    "image-id": {
+      "type": "string",
+      "title": "Image ID",
+      "description": "Choose the AMI Image ID",
       "order": 3
     },
-    "filters": {
-      "type": "array",
-      "title": "Filters",
-      "description": "One or more filters",
-      "items": {
-        "$ref": "#/definitions/filter"
-      },
-      "order": 1
+    "instance-type": {
+      "type": "string",
+      "title": "Instance Type",
+      "description": "Choose the Instance Type",
+      "order": 4
     },
-    "instance_ids": {
+    "key-name": {
+      "type": "string",
+      "title": "Key Name",
+      "description": "Choose the Key Name",
+      "order": 5
+    },
+    "security-group-ids": {
       "type": "array",
-      "title": "Instance IDs",
-      "description": "One or more instance IDs",
+      "title": "Security Group IDs",
+      "description": "Choose the Security Group IDs",
       "items": {
         "type": "string"
       },
-      "order": 2
-    }
+      "order": 1
+    },
+    "tag-specifications": {
+      "type": "string",
+      "title": "Tag Specifications",
+      "description": "Choose the tag specifications",
+      "items": {
+        "type": "string"
+      },
+      "order": 6
+    },
   },
   "definitions": {
     "filter": {
