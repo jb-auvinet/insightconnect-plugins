@@ -1,9 +1,0 @@
-{
-  "sensors": [
-    {
-      "pylumId": "machine_pylum_id",
-      "guid": "sensor_guid"
-    }
-  ],
-  "totalResults": 1
-}
