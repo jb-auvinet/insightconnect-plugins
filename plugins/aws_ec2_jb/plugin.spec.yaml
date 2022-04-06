@@ -790,6 +790,11 @@ actions:
         type: response_metadata
         description: Metadata about the response from AWS
         required: true
+      reservations:
+        title: Reservations
+        type: '[]reservation'
+        description: Zero or more reservations
+        required: false
   authorize_security_group_egress:
     title: Authorize Security Group Egress
     description: '[EC2-VPC only] Adds one or more egress rules to a security group
