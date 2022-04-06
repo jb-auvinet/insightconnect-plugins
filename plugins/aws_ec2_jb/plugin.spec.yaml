@@ -755,6 +755,41 @@ connection:
     type: string
     required: true
 actions:
+  create_instances:
+    title: Create Instances
+    description: 'Create Instances'
+    input:
+      image-id:
+        title: Image ID
+        type: string
+        description: AMI Image ID
+        required: true
+      instance-type:
+        title: Instance Type
+        type: string
+        description: Instance Type
+        required: true
+      security-group-ids:
+        title: Security Group IDs
+        type: '[]security-group-ids'
+        description: Security Group IDs
+        required: true
+      key-name:
+        title: Key Name
+        type: string
+        description: Key Name
+        required: true
+      tag-specifications:
+        title: Tag Specifications
+        type: array
+        description: Tag Specifications
+        required: true
+    output:
+      response_metadata:
+        title: Response Metadata
+        type: response_metadata
+        description: Metadata about the response from AWS
+        required: true
   authorize_security_group_egress:
     title: Authorize Security Group Egress
     description: '[EC2-VPC only] Adds one or more egress rules to a security group
