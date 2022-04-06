@@ -771,7 +771,7 @@ actions:
         required: true
       security-group-ids:
         title: Security Group IDs
-        type: '[]security-group-ids'
+        type: array
         description: Security Group IDs
         required: true
       key-name:
@@ -781,7 +781,7 @@ actions:
         required: true
       tag-specifications:
         title: Tag Specifications
-        type: array
+        type: string
         description: Tag Specifications
         required: true
     output:
